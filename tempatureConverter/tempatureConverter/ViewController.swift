@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
 
@@ -16,13 +17,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //This lets you dismiss the keyboard by tapping outside of the keyboard
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
     }
 
     @IBAction func convertPressed(_ sender: Any) {
-        let fahrenheit = Double(tempEntered.text!)
-        let celsius = 5/9.0 * (fahrenheit! - 32)
-        convertResults.text = String(celsius)
+        let fahrenheit = tempEntered.text!
+        if fahrenheit != ""{
+            if CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: fahrenheit)){
+                var celsius = Double(fahrenheit)
+                celsius = 5/9.0 * (celsius! - 32)
+                convertResults.text = String(celsius!)
+            }
+        }
     }
-    
 }
 

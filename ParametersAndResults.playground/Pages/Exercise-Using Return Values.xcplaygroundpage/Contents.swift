@@ -23,9 +23,11 @@ func impossibleThingsPhrase() -> String {
 //: - callout(Exercise): Call `impossibleBeliefsCount` and store the result in a constant.\
 //:Call `impossibleThingsPhrase`, passing in the result of `impossibleBeliefsCount` as one of the arguments.
 
+func impossibleThingsPhraseUpdated(numberOfImpossibleThings: Int, meal: String) -> String {
+    return "Why, I've believed as many as \(numberOfImpossibleThings) before \(meal)"
+}
 
-
-
-
+let numberOfEvents = impossibleBeliefsCount(pigsFlying: 4, frogsBecomingPrinces: 12, multipleLightningStrikes: 78)
+let impossiblePhrase = impossibleThingsPhraseUpdated(numberOfImpossibleThings: numberOfEvents, meal: "lunch")
 
 //: [Previous](@previous)  |  page 15 of 17  |  [Next: Exercise: Argument Label](@next)

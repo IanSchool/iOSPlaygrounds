@@ -18,7 +18,7 @@ func isLeapYear(_ year: Int) -> Bool {
     if number(year, isDivisibleBy: 4) {
         if number(year, isDivisibleBy: 100){
             return false
-        } else if number(year, isDivisibleBy: 100) {
+        } else if number(year, isDivisibleBy: 400) {
             return true
         }
         else{

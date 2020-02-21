@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var feelings: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -19,5 +21,17 @@ class ViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        segue.destination.navigationItem.title = name.text
+    }
+    
+    @IBAction func hadFeelings(_ sender: Any) {
+        if feelings.isOn {
+            performSegue(withIdentifier: "tickledPink", sender: nil)
+        }
+        else {
+            performSegue(withIdentifier: "feelingBlue", sender: nil)
+        }
+    }
 }
 

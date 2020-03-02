@@ -14,10 +14,10 @@ list.insert("Kumquat", at: 0)
 list += ["Strawberry", "Plum", "Watermelon"]
 //: - experiment: Practice adding items to the list using each of the three methods. Which do you prefer? When might you want to use each one?
 
+var animals = ["dog", "cat", "rabbit"]
 
-
-
-
+animals.append("human")
+animals.insert("turtle", at: 2)
 
 
 //: Move on to find out how to remove items from an array.\

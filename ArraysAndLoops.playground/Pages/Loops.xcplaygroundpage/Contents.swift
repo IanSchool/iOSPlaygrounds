@@ -27,6 +27,6 @@ print("Done, all friends have been invited.")
 //:
 //: All of the code between the braces is the "body" of the loop. It’s the list of steps that will be run for each item in the collection. The first time through the loop, the value of `friend` is `Name`, and the second time through its value is `Name2`, and so on until the whole collection has gone through the loop.
 //: - experiment: The `friend` constant was defined as part of the `for` loop. What do you think will happen if you uncomment the line below? Will the result be the last name the loop used. Or will it return an error?
-//friend
+//friend     An error occurs
 //: Next, make arrays that can change.\
 //: [Previous](@previous)  |  page 7 of 17  |  [Next: Mutable Arrays](@next)

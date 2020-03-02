@@ -18,20 +18,69 @@ let shouldHaveMorePollOptionsVotes: [Bool] = [false, false, true, true, false, t
 
 //: - callout(Exercise): Create two variables, one to count `yes` votes and one to count `no` votes. Each should start off with a value of zero.
 //:
-
+var yess = 0
+var nos = 0
 //: - callout(Exercise): Create a `for…in` loop that loops over one of the vote collections and checks the value of each vote. If the vote is `true`, the loop should add one vote to the `yes` variable. If it's `false`, it should add one vote to the `no` variable.
 
+for votes in shouldMascotChangeVotes{
+    if votes{
+        yess += 1
+    }
+    else{
+        nos += 1
+    }
+}
+if yess > nos{
+    print("Vote passed")
+}
+else{
+    print("Vote failed")
+}
 
+yess = 0
+nos = 0
+for votes in shouldInstallCoffeeVendingMachineVotes{
+    if votes{
+        yess += 1
+    }
+    else{
+        nos += 1
+    }
+}
+if yess > nos{
+    print("Vote passed")
+}
+else{
+    print("Vote failed")
+}
+
+yess = 0
+nos = 0
+for votes in shouldHaveMorePollOptionsVotes{
+    if votes{
+        yess += 1
+    }
+    else{
+        nos += 1
+    }
+}
+if yess > nos{
+    print("Vote passed")
+}
+else{
+    print("Vote failed")
+}
 
 //: - callout(Exercise): After the loop has finished, write an `if` statement that compares the two values and prints a different message based on whether the vote passed or failed.
 
-
+//I wrote it with the loops above
 
 //: - callout(Exercise): Test your code by calling the `for…in` loop on each of the vote collections.\
 //:Which measures won by popular vote?
 
-
-
+//The shouldMascotChangeVotes passed
+//The shouldInstallCoffeeVendingMachineVotes failed
+//The shouldHaveMorePollOptionsVotes failed
 
 /*:
  ### Extension:
@@ -46,7 +95,19 @@ let shouldHaveMorePollOptionsVotes: [Bool] = [false, false, true, true, false, t
  */
 // Add your vote-processing function here:
 
-
+func printResults(forIssue: String, withVotes: [Bool]){
+    yess = 0
+    nos = 0
+    for votes in withVotes{
+        if votes{
+            yess += 1
+        }
+        else{
+            nos += 1
+        }
+    }
+    print("\(forIssue) \(yess) yes, \(nos), no")
+}
 
 
 

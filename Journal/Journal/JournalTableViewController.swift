@@ -93,6 +93,4 @@ class JournalTableViewController: UITableViewController {
             journalEntryViewController.journalEntry = entry
         }
     }
-    
-
 }

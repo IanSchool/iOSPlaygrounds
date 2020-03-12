@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QXH-Y2-6Fv">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="TcN-4d-N1J">
+            <objects>
+                <navigationController id="QXH-Y2-6Fv" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HUu-Cn-7Hc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hX4-T4-j82" kind="relationship" relationship="rootViewController" id="7dE-BC-cjk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pp2-eO-ilQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-228" y="96"/>
+        </scene>
+        <!--Journal Entry View Controller-->
+        <scene sceneID="0ab-qc-m8k">
+            <objects>
+                <viewController id="3Ne-B9-Go2" customClass="JournalEntryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8nH-W2-gJW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="JournalEntry Contents" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Sqi-OK-nic">
+                                <rect key="frame" x="10" y="98" width="394" height="754"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2f5-9t-Dn5" firstAttribute="trailing" secondItem="Sqi-OK-nic" secondAttribute="trailing" constant="10" id="65n-Nm-wuO"/>
+                            <constraint firstItem="Sqi-OK-nic" firstAttribute="top" secondItem="2f5-9t-Dn5" secondAttribute="top" constant="10" id="I7h-yM-gzs"/>
+                            <constraint firstItem="2f5-9t-Dn5" firstAttribute="bottom" secondItem="Sqi-OK-nic" secondAttribute="bottom" constant="10" id="ifb-Ui-fKm"/>
+                            <constraint firstItem="Sqi-OK-nic" firstAttribute="leading" secondItem="2f5-9t-Dn5" secondAttribute="leading" constant="10" id="lvC-7S-GOm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2f5-9t-Dn5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fTj-3G-ROB"/>
+                    <connections>
+                        <outlet property="journalEntryContents" destination="Sqi-OK-nic" id="fh6-ev-Fuh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tuZ-Pj-WvV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1222" y="96"/>
+        </scene>
+        <!--My Journal-->
+        <scene sceneID="Ki4-qr-5pH">
+            <objects>
+                <tableViewController id="hX4-T4-j82" customClass="JournalTableViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="13F-Qh-IWK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JournalEntryCell" id="aN6-hi-bDE">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aN6-hi-bDE" id="Dqy-XK-1YG">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="3Ne-B9-Go2" kind="show" id="TNQ-dE-8wc"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hX4-T4-j82" id="ADw-qw-f9w"/>
+                            <outlet property="delegate" destination="hX4-T4-j82" id="Tab-u9-xGd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Journal" id="s54-q0-nqk"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ur6-qz-l9V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="496" y="96"/>
+        </scene>
+    </scenes>
+</document>

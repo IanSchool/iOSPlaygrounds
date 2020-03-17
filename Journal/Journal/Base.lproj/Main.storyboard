@@ -26,7 +26,7 @@
         <!--Journal Entry View Controller-->
         <scene sceneID="0ab-qc-m8k">
             <objects>
-                <viewController id="3Ne-B9-Go2" customClass="JournalEntryViewController" sceneMemberID="viewController">
+                <viewController id="3Ne-B9-Go2" customClass="JournalEntryViewController" customModule="Journal" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8nH-W2-gJW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,6 +57,38 @@
             </objects>
             <point key="canvasLocation" x="1222" y="96"/>
         </scene>
+        <!--New Journal Entry View Controller-->
+        <scene sceneID="8pO-At-E53">
+            <objects>
+                <viewController title="New Journal Entry View Controller" id="xT8-Qr-d9a" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uK5-0R-Hyf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qa3-MZ-prd">
+                                <rect key="frame" x="10" y="54" width="394" height="442"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Qa3-MZ-prd" secondAttribute="height" multiplier="197:221" id="5ks-e9-aM0"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Qa3-MZ-prd" firstAttribute="top" secondItem="u1Q-eG-var" secondAttribute="top" constant="90" id="RY3-fh-bf7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="u1Q-eG-var"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KFz-ED-hv3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="496" y="803"/>
+        </scene>
         <!--My Journal-->
         <scene sceneID="Ki4-qr-5pH">
             <objects>
@@ -83,7 +115,13 @@
                             <outlet property="delegate" destination="hX4-T4-j82" id="Tab-u9-xGd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Journal" id="s54-q0-nqk"/>
+                    <navigationItem key="navigationItem" title="My Journal" id="s54-q0-nqk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="L5j-XC-Oj9">
+                            <connections>
+                                <segue destination="xT8-Qr-d9a" kind="presentation" id="xZT-ls-wy8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ur6-qz-l9V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

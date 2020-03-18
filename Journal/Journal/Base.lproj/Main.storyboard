@@ -34,7 +34,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="JournalEntry Contents" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Sqi-OK-nic">
                                 <rect key="frame" x="10" y="98" width="394" height="754"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -60,17 +60,22 @@
         <!--New Journal Entry View Controller-->
         <scene sceneID="8pO-At-E53">
             <objects>
-                <viewController title="New Journal Entry View Controller" id="xT8-Qr-d9a" sceneMemberID="viewController">
+                <viewController title="New Journal Entry View Controller" id="xT8-Qr-d9a" customClass="NewJournalEntryViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uK5-0R-Hyf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qa3-MZ-prd">
-                                <rect key="frame" x="10" y="54" width="394" height="442"/>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KEs-sE-Ryn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="New Journal Entry" id="wbs-6S-AU1">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CCb-rZ-cLi"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FU4-Cd-5fW">
+                                <rect key="frame" x="10" y="77" width="394" height="349"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Qa3-MZ-prd" secondAttribute="height" multiplier="197:221" id="5ks-e9-aM0"/>
-                                </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -78,7 +83,8 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Qa3-MZ-prd" firstAttribute="top" secondItem="u1Q-eG-var" secondAttribute="top" constant="90" id="RY3-fh-bf7"/>
+                            <constraint firstItem="FU4-Cd-5fW" firstAttribute="top" secondItem="KEs-sE-Ryn" secondAttribute="bottom" constant="60" id="NWf-b3-4fp"/>
+                            <constraint firstItem="u1Q-eG-var" firstAttribute="bottom" secondItem="FU4-Cd-5fW" secondAttribute="bottom" constant="450" id="V7b-MX-DZr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="u1Q-eG-var"/>
                     </view>
@@ -106,7 +112,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="3Ne-B9-Go2" kind="show" id="TNQ-dE-8wc"/>
+                                    <segue destination="3Ne-B9-Go2" kind="show" identifier="journalEntry" id="TNQ-dE-8wc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

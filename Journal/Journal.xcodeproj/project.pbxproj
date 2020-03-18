@@ -14,6 +14,7 @@
 		3C505E5424115F8000032218 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C505E5224115F8000032218 /* LaunchScreen.storyboard */; };
 		3C505E5C241164D900032218 /* JournalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C505E5B241164D900032218 /* JournalTableViewController.swift */; };
 		3CC061CE2416CBB6009BCA77 /* JournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC061CD2416CBB6009BCA77 /* JournalEntryViewController.swift */; };
+		3CF230012422A43600A28BB5 /* NewJournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF230002422A43600A28BB5 /* NewJournalEntryViewController.swift */; };
 		3CF77E672412D1EB006A5337 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF77E662412D1EB006A5337 /* JournalEntry.swift */; };
 		3CF77E692412D5EF006A5337 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF77E682412D5EF006A5337 /* Journal.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,7 @@
 		3C505E5524115F8000032218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C505E5B241164D900032218 /* JournalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewController.swift; sourceTree = "<group>"; };
 		3CC061CD2416CBB6009BCA77 /* JournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryViewController.swift; sourceTree = "<group>"; };
+		3CF230002422A43600A28BB5 /* NewJournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJournalEntryViewController.swift; sourceTree = "<group>"; };
 		3CF77E662412D1EB006A5337 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		3CF77E682412D5EF006A5337 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +74,7 @@
 				3C505E5524115F8000032218 /* Info.plist */,
 				3CF77E662412D1EB006A5337 /* JournalEntry.swift */,
 				3CF77E682412D5EF006A5337 /* Journal.swift */,
+				3CF230002422A43600A28BB5 /* NewJournalEntryViewController.swift */,
 			);
 			path = Journal;
 			sourceTree = "<group>";
@@ -108,6 +111,7 @@
 				TargetAttributes = {
 					3C505E4324115F7F00032218 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -152,6 +156,7 @@
 				3CC061CE2416CBB6009BCA77 /* JournalEntryViewController.swift in Sources */,
 				3C505E5C241164D900032218 /* JournalTableViewController.swift in Sources */,
 				3CF77E672412D1EB006A5337 /* JournalEntry.swift in Sources */,
+				3CF230012422A43600A28BB5 /* NewJournalEntryViewController.swift in Sources */,
 				3C505E4A24115F7F00032218 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Journal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -304,6 +310,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.ssfs.Journal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Journal/Journal-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -313,6 +321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Journal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -321,6 +330,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.ssfs.Journal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Journal/Journal-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

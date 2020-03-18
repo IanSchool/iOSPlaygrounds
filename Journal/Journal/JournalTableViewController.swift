@@ -12,6 +12,7 @@ class JournalTableViewController: UITableViewController {
 
     let cellReuseIdentifier = "JournalEntryCell"
     var journal = Journal()
+    let journalEntrySegueIdentifier = "journalEntry"
     
     override func viewDidLoad() {
         super.viewDidLoad()

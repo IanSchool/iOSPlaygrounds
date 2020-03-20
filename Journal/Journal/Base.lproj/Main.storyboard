@@ -65,16 +65,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KEs-sE-Ryn">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KEs-sE-Ryn">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="New Journal Entry" id="wbs-6S-AU1">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CCb-rZ-cLi"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CCb-rZ-cLi">
+                                            <connections>
+                                                <action selector="cancel:" destination="xT8-Qr-d9a" id="GdV-jE-xkY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="7Qt-4O-35d">
+                                            <connections>
+                                                <segue destination="Qiz-eN-yOp" kind="unwind" unwindAction="doneWithSegue:" id="8sB-cI-vsY"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FU4-Cd-5fW">
-                                <rect key="frame" x="10" y="77" width="394" height="349"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TsT-py-73N">
+                                <rect key="frame" x="10" y="71" width="394" height="418"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -82,18 +93,18 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="FU4-Cd-5fW" firstAttribute="top" secondItem="KEs-sE-Ryn" secondAttribute="bottom" constant="60" id="NWf-b3-4fp"/>
-                            <constraint firstItem="u1Q-eG-var" firstAttribute="bottom" secondItem="FU4-Cd-5fW" secondAttribute="bottom" constant="450" id="V7b-MX-DZr"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="u1Q-eG-var"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="journalEntryContents" destination="TsT-py-73N" id="dkg-Dn-9Hh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFz-ED-hv3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Qiz-eN-yOp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="496" y="803"/>
+            <point key="canvasLocation" x="495.6521739130435" y="802.90178571428567"/>
         </scene>
         <!--My Journal-->
         <scene sceneID="Ki4-qr-5pH">
@@ -124,7 +135,7 @@
                     <navigationItem key="navigationItem" title="My Journal" id="s54-q0-nqk">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="L5j-XC-Oj9">
                             <connections>
-                                <segue destination="xT8-Qr-d9a" kind="presentation" id="xZT-ls-wy8"/>
+                                <segue destination="xT8-Qr-d9a" kind="presentation" identifier="newJournalEntry" id="xZT-ls-wy8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

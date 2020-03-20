@@ -13,10 +13,11 @@ class JournalTableViewController: UITableViewController {
     let cellReuseIdentifier = "JournalEntryCell"
     var journal = Journal()
     let journalEntrySegueIdentifier = "journalEntry"
+    let newJournalSegueIdentifier = "newJournalEntry"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for index in 0...1000 {
+        for index in 0...3 {
             journal.entries.append(JournalEntry(date: Date(), contents: "Contents for entry \(index)"))
         }
         
@@ -48,6 +49,12 @@ class JournalTableViewController: UITableViewController {
         return cell
     }
 
+    @IBAction func done(segue: UIStoryboardSegue) {
+        let newJournalEntry = segue.source as! NewJournalEntryViewController
+        journal.entries.append(JournalEntry(date: Date(), contents: newJournalEntry.journalEntryContents.text))
+        tableView.reloadData()
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -92,6 +99,12 @@ class JournalTableViewController: UITableViewController {
             let indexPath = self.tableView.indexPath(for: cell),
             let entry = journal.entry(index: indexPath.row) {
             journalEntryViewController.journalEntry = entry
+        }
+        else if segue.identifier == newJournalSegueIdentifier {
+            if let newJournalEntryViewController =
+                segue.destination as? NewJournalEntryViewController {
+                newJournalEntryViewController.journal = journal
+            }
         }
     }
 }

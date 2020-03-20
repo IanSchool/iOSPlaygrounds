@@ -10,13 +10,18 @@ import UIKit
 
 class NewJournalEntryViewController: UIViewController {
 
+    @IBOutlet weak var journalEntryContents: UITextView!
+    var journal: Journal?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

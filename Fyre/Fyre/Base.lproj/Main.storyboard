@@ -79,6 +79,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kjg-qJ-zCK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,15 +94,108 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Glossary for Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilk-fr-oRB">
-                                <rect key="frame" x="88" y="101" width="238" height="36"/>
+                                <rect key="frame" x="88" y="60" width="238" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BSn-TO-RGE">
-                                <rect key="frame" x="66" y="145" width="283" height="591"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="td0-Ei-OOe">
+                                <rect key="frame" x="57" y="129" width="300" height="600"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Arj-G2-47Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AS" translatesAutoresizingMaskIntoConstraints="NO" id="3aJ-x1-Qqq">
+                                                <rect key="frame" x="0.0" y="0.0" width="100.00000000000011" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="g5E-hW-iqS"/>
+                                                    <constraint firstAttribute="height" constant="150" id="oC7-n7-At8"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="This card makes the next player draw one card" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3rw-Gr-M73">
+                                                <rect key="frame" x="100" y="0.0" width="200" height="150"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="rxv-Rd-xsI"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWn-eg-AgC">
+                                        <rect key="frame" x="0.0" y="150" width="300" height="150"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JS" translatesAutoresizingMaskIntoConstraints="NO" id="rUV-es-cK2">
+                                                <rect key="frame" x="0.0" y="0.0" width="100.00000000000011" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="8bz-eA-Cj2"/>
+                                                    <constraint firstAttribute="width" constant="100" id="IfZ-Fp-Gxa"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="This card skips your next opponet" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="onE-Rg-RWH">
+                                                <rect key="frame" x="100" y="0.0" width="200" height="150"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="wpc-q7-CYS"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASf-H2-Va7">
+                                        <rect key="frame" x="0.0" y="300" width="300" height="150"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QS" translatesAutoresizingMaskIntoConstraints="NO" id="19U-ON-K1X">
+                                                <rect key="frame" x="0.0" y="0.0" width="100.00000000000011" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="ZU4-Ce-GZs"/>
+                                                    <constraint firstAttribute="width" constant="100" id="gfb-Aa-IWJ"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="This card lets you discard one card then draw one card" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Llp-W4-64h">
+                                                <rect key="frame" x="100" y="0.0" width="200" height="150"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="iwy-54-CYU"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tlg-nV-7LR">
+                                        <rect key="frame" x="0.0" y="450" width="300" height="150"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KS" translatesAutoresizingMaskIntoConstraints="NO" id="E4C-QY-jNc">
+                                                <rect key="frame" x="0.0" y="0.0" width="100.00000000000011" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="9PW-5I-0iR"/>
+                                                    <constraint firstAttribute="height" constant="150" id="HEP-uT-y62"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="This card lets you swap hands with an opponet" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9kc-un-yS6">
+                                                <rect key="frame" x="100" y="0.0" width="200" height="150"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="FMp-rA-ONA"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="6Lc-j8-sff"/>
+                                    <constraint firstAttribute="width" constant="300" id="T6Q-jm-a79"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -121,7 +215,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1lv-17-sxR">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1lv-17-sxR">
                                 <rect key="frame" x="75" y="85" width="240" height="643"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -160,13 +254,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nZU-iR-weD">
-                                <rect key="frame" x="50" y="608" width="200" height="220"/>
+                                <rect key="frame" x="50" y="608" width="300" height="256"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iiq-WU-Mp8">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="110"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="128"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4KR-A4-Ckv">
-                                        <rect key="frame" x="0.0" y="110" width="200" height="110"/>
+                                        <rect key="frame" x="0.0" y="128" width="300" height="128"/>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -223,4 +317,10 @@
             <point key="canvasLocation" x="1013.0434782608696" y="129.91071428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AS" width="691" height="1056"/>
+        <image name="JS" width="691" height="1056"/>
+        <image name="KS" width="691" height="1056"/>
+        <image name="QS" width="691" height="1056"/>
+    </resources>
 </document>

@@ -17,6 +17,7 @@
 		3CF230B2243E205100A28BB5 /* FyreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF230B1243E205100A28BB5 /* FyreUITests.swift */; };
 		3CF230C024489BEA00A28BB5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF230BF24489BEA00A28BB5 /* Player.swift */; };
 		3CF230C224489C0500A28BB5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF230C124489C0500A28BB5 /* Game.swift */; };
+		3CF230C4244E024100A28BB5 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF230C3244E024100A28BB5 /* Cards.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3CF230B3243E205100A28BB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CF230BF24489BEA00A28BB5 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		3CF230C124489C0500A28BB5 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		3CF230C3244E024100A28BB5 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				3CF2308F243E204C00A28BB5 /* AppDelegate.swift */,
+				3CF230C3244E024100A28BB5 /* Cards.swift */,
 				3CF23091243E204C00A28BB5 /* SceneDelegate.swift */,
 				3CF23093243E204C00A28BB5 /* ViewController.swift */,
 				3CF230BF24489BEA00A28BB5 /* Player.swift */,
@@ -268,6 +271,7 @@
 				3CF230C024489BEA00A28BB5 /* Player.swift in Sources */,
 				3CF230C224489C0500A28BB5 /* Game.swift in Sources */,
 				3CF23094243E204C00A28BB5 /* ViewController.swift in Sources */,
+				3CF230C4244E024100A28BB5 /* Cards.swift in Sources */,
 				3CF23090243E204C00A28BB5 /* AppDelegate.swift in Sources */,
 				3CF23092243E204C00A28BB5 /* SceneDelegate.swift in Sources */,
 			);

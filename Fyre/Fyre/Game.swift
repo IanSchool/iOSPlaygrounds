@@ -9,13 +9,14 @@
 import Foundation
 
 struct Game {
-    var numOfPlayersValue: Int = 0
-    var goldAtStart: Int = 0
+    var numOfPlayersValue: Int
+    var goldAtStart: Int
     var personPlayer: Player
     var cpu1: Player
     var cpu2: Player
     var cpu3: Player
-    var playerList: [Player] = []
+    var playerList: [Player]
+    var cardInPlay: Cards
     
     /*numOfPlayersValue = Int(numOfPlayers.text!)!
     goldAtStart = Int(startingGold.text!)!
@@ -40,4 +41,8 @@ struct Game {
             }
         }
     }*/
+    
+    func cardPlayable (cardPlayed: Cards) -> Bool {
+        
+    }
 }

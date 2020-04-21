@@ -9,5 +9,8 @@
 import Foundation
 
 struct Cards {
+    var cardNum: Int
+    var cardType: Character
+    var specialCard: Bool
     
 }

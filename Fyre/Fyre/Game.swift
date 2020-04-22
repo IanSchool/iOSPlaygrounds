@@ -16,33 +16,32 @@ struct Game {
     var cpu2: Player
     var cpu3: Player
     var playerList: [Player]
-    var cardInPlay: Cards
+    var cardInPlay: Card
     
-    /*numOfPlayersValue = Int(numOfPlayers.text!)!
-    goldAtStart = Int(startingGold.text!)!
-    numOfPlayersValue -= 1
-    for playerCount in 0...numOfPlayersValue {
-        if playerCount == 0 {
-            personPlayer = Player(cardsRemaining: 4, goldRemaining: goldAtStart, person: true)
-            playerList.append(personPlayer)
+    mutating func gameStart(playerCount: Int, startingGold: Int) {
+        for _ in 0...playerCount {
+            if playerCount == 0 {
+                personPlayer = Player(cardsInHand: Card(cardNum: 1, cardType: "s", specialCard: false), goldRemaining: startingGold, person: true)
+                playerList.append(personPlayer)
+            }
+            else {
+                if playerCount == 1 {
+                    cpu1 = Player(cardsInHand: Card(cardNum: 1, cardType: "s", specialCard: false), goldRemaining: startingGold, person: false)
+                    playerList.append(cpu1)
+                }
+                else if playerCount == 2 {
+                    cpu2 = Player(cardsInHand: Card(cardNum: 1, cardType: "s", specialCard: false), goldRemaining: startingGold, person: false)
+                    playerList.append(cpu2)
+                }
+                else if playerCount == 3 {
+                    cpu3 = Player(cardsInHand: Card(cardNum: 1, cardType: "s", specialCard: false), goldRemaining: startingGold, person: false)
+                    playerList.append(cpu3)
+                }
+            }
         }
-        else {
-            if playerCount == 1 {
-                cpu1 = Player(cardsRemaining: 4, goldRemaining: goldAtStart, person: false)
-                playerList.append(cpu1)
-            }
-            else if playerCount == 2 {
-                cpu2 = Player(cardsRemaining: 4, goldRemaining: goldAtStart, person: false)
-                playerList.append(cpu2)
-            }
-            else if playerCount == 3 {
-                cpu3 = Player(cardsRemaining: 4, goldRemaining: goldAtStart, person: false)
-                playerList.append(cpu3)
-            }
-        }
-    }*/
+    }
     
-    func cardPlayable (cardPlayed: Cards) -> Bool {
+    func cardPlayable (cardPlayed: Card) -> Bool {
         
     }
 }

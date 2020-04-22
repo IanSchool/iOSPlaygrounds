@@ -9,7 +9,7 @@
 import Foundation
 
 struct Player {
-    var cardsInHand: [Cards]
+    var cardsInHand: Card
     var goldRemaining: Int
     var person: Bool
 }

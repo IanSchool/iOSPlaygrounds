@@ -10,9 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    //Possible immediate crash
     @IBOutlet weak var startingGold: UITextField!
     @IBOutlet weak var numOfPlayers: UITextField!
+    var numOfPlayersValue: Int?
+    var goldAtStart: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startGame(_ sender: Any) {
-        
+        numOfPlayersValue = Int(numOfPlayers.text!)!
+        goldAtStart = Int(startingGold.text!)!
     }
     
     

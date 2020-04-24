@@ -24,10 +24,6 @@ class ViewController: UIViewController {
         numOfPlayersValue = Int(numOfPlayers.text!)!
         goldAtStart = Int(startingGold.text!)!
     }
-    
-    
-    
-    //Does everythig have to be within Start Button?
 
 
 }

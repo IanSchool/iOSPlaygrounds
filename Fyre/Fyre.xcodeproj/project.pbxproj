@@ -18,6 +18,7 @@
 		3CF230C024489BEA00A28BB5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF230BF24489BEA00A28BB5 /* Player.swift */; };
 		3CF230C224489C0500A28BB5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF230C124489C0500A28BB5 /* Game.swift */; };
 		3CF230C82450C47E00A28BB5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF230C72450C47E00A28BB5 /* Card.swift */; };
+		3CF230CA2453114E00A28BB5 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF230C92453114E00A28BB5 /* Deck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		3CF230BF24489BEA00A28BB5 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		3CF230C124489C0500A28BB5 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		3CF230C72450C47E00A28BB5 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		3CF230C92453114E00A28BB5 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				3CF2308F243E204C00A28BB5 /* AppDelegate.swift */,
 				3CF23091243E204C00A28BB5 /* SceneDelegate.swift */,
 				3CF230BF24489BEA00A28BB5 /* Player.swift */,
+				3CF230C92453114E00A28BB5 /* Deck.swift */,
 				3CF230C124489C0500A28BB5 /* Game.swift */,
 				3CF230C72450C47E00A28BB5 /* Card.swift */,
 				3CF23093243E204C00A28BB5 /* ViewController.swift */,
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CF230CA2453114E00A28BB5 /* Deck.swift in Sources */,
 				3CF230C024489BEA00A28BB5 /* Player.swift in Sources */,
 				3CF230C82450C47E00A28BB5 /* Card.swift in Sources */,
 				3CF230C224489C0500A28BB5 /* Game.swift in Sources */,

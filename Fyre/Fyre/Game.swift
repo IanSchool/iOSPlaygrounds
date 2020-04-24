@@ -17,24 +17,26 @@ struct Game {
     var cpu3: Player
     var playerList: [Player]
     var cardInPlay: Card
+    var starter: [Card] = []
     
     mutating func gameStart(playerCount: Int, startingGold: Int) {
         for _ in 0...playerCount {
+            starter = Deck.startingHand()
             if playerCount == 0 {
-                personPlayer = Player(cardsInHand: Card(cardNum: 1, cardType: "s", specialCard: false), goldRemaining: startingGold, person: true)
+                personPlayer = Player(cardsInHand: starter, goldRemaining: startingGold, person: true)
                 playerList.append(personPlayer)
             }
             else {
                 if playerCount == 1 {
-                    cpu1 = Player(cardsInHand: Card(cardNum: 1, cardType: "s", specialCard: false), goldRemaining: startingGold, person: false)
+                    cpu1 = Player(cardsInHand: starter, goldRemaining: startingGold, person: false)
                     playerList.append(cpu1)
                 }
                 else if playerCount == 2 {
-                    cpu2 = Player(cardsInHand: Card(cardNum: 1, cardType: "s", specialCard: false), goldRemaining: startingGold, person: false)
+                    cpu2 = Player(cardsInHand: starter, goldRemaining: startingGold, person: false)
                     playerList.append(cpu2)
                 }
                 else if playerCount == 3 {
-                    cpu3 = Player(cardsInHand: Card(cardNum: 1, cardType: "s", specialCard: false), goldRemaining: startingGold, person: false)
+                    cpu3 = Player(cardsInHand: starter, goldRemaining: startingGold, person: false)
                     playerList.append(cpu3)
                 }
             }
@@ -42,6 +44,9 @@ struct Game {
     }
     
     func cardPlayable (cardPlayed: Card) -> Bool {
-        
+        if cardPlayed.cardNum == cardInPlay.cardNum || cardPlayed.cardType == cardInPlay.cardType {
+            return true
+        }
+        return false
     }
 }

@@ -10,10 +10,6 @@ import Foundation
 
 struct Card {
     var cardNum: Int
-    var cardType: Character
-    var specialCard: Bool
+    var cardType: String
     
-    func randomCard() {
-        
-    }
 }

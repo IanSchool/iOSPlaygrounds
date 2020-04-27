@@ -18,10 +18,11 @@ struct Game {
     var playerList: [Player]
     var cardInPlay: Card
     var starter: [Card] = []
+    var deck = Deck()
     
     mutating func gameStart(playerCount: Int, startingGold: Int) {
         for _ in 0...playerCount {
-            starter = Deck.startingHand()
+            starter = deck.startingHand()
             if playerCount == 0 {
                 personPlayer = Player(cardsInHand: starter, goldRemaining: startingGold, person: true)
                 playerList.append(personPlayer)

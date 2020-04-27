@@ -21,8 +21,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startGame(_ sender: Any) {
-        numOfPlayersValue = Int(numOfPlayers.text!)!
-        goldAtStart = Int(startingGold.text!)!
+        numOfPlayersValue = Int(numOfPlayers.text!)
+        goldAtStart = Int(startingGold.text!)
     }
 
 

@@ -21,22 +21,22 @@ struct Game {
     var deck = Deck()
     
     mutating func gameStart(playerCount: Int, startingGold: Int) {
-        for _ in 0...playerCount {
+        for _ in 1...playerCount {
             starter = deck.startingHand()
-            if playerCount == 0 {
+            if playerCount == 1 {
                 personPlayer = Player(cardsInHand: starter, goldRemaining: startingGold, person: true)
                 playerList.append(personPlayer)
             }
             else {
-                if playerCount == 1 {
+                if playerCount == 2 {
                     cpu1 = Player(cardsInHand: starter, goldRemaining: startingGold, person: false)
                     playerList.append(cpu1)
                 }
-                else if playerCount == 2 {
+                else if playerCount == 3 {
                     cpu2 = Player(cardsInHand: starter, goldRemaining: startingGold, person: false)
                     playerList.append(cpu2)
                 }
-                else if playerCount == 3 {
+                else if playerCount == 4 {
                     cpu3 = Player(cardsInHand: starter, goldRemaining: startingGold, person: false)
                     playerList.append(cpu3)
                 }

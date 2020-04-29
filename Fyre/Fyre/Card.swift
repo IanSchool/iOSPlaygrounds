@@ -11,5 +11,5 @@ import Foundation
 struct Card {
     var cardNum: Int
     var cardType: String
-    
+    var cardName: String
 }

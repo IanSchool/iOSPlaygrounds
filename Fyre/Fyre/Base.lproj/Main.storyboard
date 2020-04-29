@@ -205,7 +205,7 @@
                                 <rect key="frame" x="54" y="239" width="307" height="507.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <mutableString key="text">- Each player starts with a set amount of gold at the beggining of the game, then at the start of the game everyone draws four cards                                                   - Then after that every player makes an intial bet based or folds(they quit the round)                                            - Once every player has made their intial bet the first playing round will begin.                                                      - Each player, starting with player one and moving in a circle from there, plays one card                                                         - After everyone has played one card you can either fold, raise, or stay                                                      - This continues until only one player has money left</mutableString>
+                                <string key="text">- Each player starts with a set amount of gold at the beggining of the game, then at the start of the game everyone draws four cards                                                   - Then after that every player makes an intial bet based or folds(they quit the round)                                            - Once every player has made their intial bet the first playing round will begin.                                                      - Each player, starting with player one and moving in a circle from there, plays one card                                                         - After everyone has played one card you can either fold, raise, or stay                                                      - This continues until only one player has money left</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -366,6 +366,16 @@
                         <viewLayoutGuide key="safeArea" id="iHV-uA-XrI"/>
                     </view>
                     <navigationItem key="navigationItem" id="GVw-7Y-WBY"/>
+                    <connections>
+                        <outlet property="card1" destination="ERY-ku-JGp" id="3aw-vf-nL6"/>
+                        <outlet property="card2" destination="r46-gZ-3hZ" id="XnJ-eT-Qks"/>
+                        <outlet property="card3" destination="sxE-pV-Eap" id="hH2-kf-nXa"/>
+                        <outlet property="card4" destination="sWo-xL-xLb" id="nof-6d-fd9"/>
+                        <outlet property="card5" destination="Rm5-wq-1St" id="npC-vX-Mpa"/>
+                        <outlet property="card6" destination="Bvh-4i-eQ5" id="NkB-3q-YkG"/>
+                        <outlet property="card7" destination="G5D-J5-5Lh" id="cX1-Gu-Jxh"/>
+                        <outlet property="card8" destination="FKa-gf-0Ox" id="B8w-eX-t2v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fr6-Ce-z68" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

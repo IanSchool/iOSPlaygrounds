@@ -9,18 +9,18 @@
 import Foundation
 
 struct Game {
-    var numOfPlayersValue: Int
-    var goldAtStart: Int
-    var personPlayer: Player
-    var cpu1: Player
-    var cpu2: Player
-    var cpu3: Player
-    var playerList: [Player]
-    var cardInPlay: Card
+    var numOfPlayersValue: Int = 0
+    var goldAtStart: Int = 0
+    var personPlayer: Player = Player(cardsInHand: [], goldRemaining: 0, person: false)
+    var cpu1: Player = Player(cardsInHand: [], goldRemaining: 0, person: false)
+    var cpu2: Player = Player(cardsInHand: [], goldRemaining: 0, person: false)
+    var cpu3: Player = Player(cardsInHand: [], goldRemaining: 0, person: false)
+    var playerList: [Player] = []
+    var cardInPlay: Card = Card(cardNum: 0, cardType: "", cardName: "")
     var starter: [Card] = []
     var deck = Deck()
     
-    mutating func gameStart(playerCount: Int, startingGold: Int) {
+    mutating func start(playerCount: Int, startingGold: Int) {
         for _ in 1...playerCount {
             starter = deck.startingHand()
             if playerCount == 1 {

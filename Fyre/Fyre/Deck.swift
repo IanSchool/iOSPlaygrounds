@@ -11,17 +11,17 @@ import Foundation
 struct Deck {
     var deck: [Card] = []
     init() {
-        let suits = ["h", "c", "s", "d"]
+        let suits = ["H", "C", "S", "D"]
         for number in 1...13 {
             for s in suits {
-               let card = Card(cardNum: number, cardType: s)
+                let card = Card(cardNum: number, cardType: s, cardName: (String(number) + s))
                 deck.append(card)
             }
         }
     }
     
     mutating func randomCard() -> Card{
-        let randomInit = Int.random(in: 1..<53)
+        let randomInit = Int.random(in: 0..<52)
         let cardSelected = deck[randomInit]
         deck.remove(at: randomInit)
         return cardSelected

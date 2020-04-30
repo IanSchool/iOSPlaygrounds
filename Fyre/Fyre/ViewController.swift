@@ -33,7 +33,8 @@ class ViewController: UIViewController {
         goldAtStart = Int(startingGold.text!)
         var game = Game()
         game.start(playerCount: numOfPlayersValue!, startingGold: goldAtStart!)
-        card1.image = UIImage(named: game.personPlayer.cardsInHand[0].cardName)
+        print(game.personPlayer.showHand())
+        //card1.image = UIImage(named: game.personPlayer.cardsInHand[0].cardName)
         
         performSegue(withIdentifier: "startGame", sender: nil)
         

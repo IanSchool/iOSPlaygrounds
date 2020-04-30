@@ -24,20 +24,28 @@ struct Game {
         for _ in 1...playerCount {
             starter = deck.startingHand()
             if playerCount == 1 {
-                personPlayer = Player(cardsInHand: starter, goldRemaining: startingGold, person: true)
+                personPlayer.cardsInHand = starter
+                personPlayer.goldRemaining = startingGold
+                personPlayer.person = true
                 playerList.append(personPlayer)
             }
             else {
                 if playerCount == 2 {
-                    cpu1 = Player(cardsInHand: starter, goldRemaining: startingGold, person: false)
+                    cpu1.cardsInHand = starter
+                    cpu1.goldRemaining = startingGold
+                    cpu1.person = false
                     playerList.append(cpu1)
                 }
                 else if playerCount == 3 {
-                    cpu2 = Player(cardsInHand: starter, goldRemaining: startingGold, person: false)
+                    cpu2.cardsInHand = starter
+                    cpu2.goldRemaining = startingGold
+                    cpu2.person = false
                     playerList.append(cpu2)
                 }
                 else if playerCount == 4 {
-                    cpu3 = Player(cardsInHand: starter, goldRemaining: startingGold, person: false)
+                    cpu3.cardsInHand = starter
+                    cpu3.goldRemaining = startingGold
+                    cpu3.person = false
                     playerList.append(cpu3)
                 }
             }

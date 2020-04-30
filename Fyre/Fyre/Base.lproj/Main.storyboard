@@ -106,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
-        <!--Glossary Screen-->
+        <!--View Controller-->
         <scene sceneID="g2A-Bg-M9k">
             <objects>
-                <viewController id="HYd-EQ-YWc" customClass="GlossaryScreen" sceneMemberID="viewController">
+                <viewController id="HYd-EQ-YWc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d03-LA-9VO" customClass="GlossaryScreen">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -193,10 +193,10 @@
             </objects>
             <point key="canvasLocation" x="138" y="852"/>
         </scene>
-        <!--Rules Screen-->
+        <!--View Controller-->
         <scene sceneID="SiZ-Dz-RxX">
             <objects>
-                <viewController id="r8F-8G-hKM" customClass="RulesScreen" sceneMemberID="viewController">
+                <viewController id="r8F-8G-hKM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u3h-ai-cvF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -220,10 +220,10 @@
             </objects>
             <point key="canvasLocation" x="1011.5942028985507" y="851.78571428571422"/>
         </scene>
-        <!--Play Screen-->
+        <!--View Controller-->
         <scene sceneID="NgV-RU-e18">
             <objects>
-                <viewController id="fUp-Jk-5A0" customClass="PlayScreen" sceneMemberID="viewController">
+                <viewController id="fUp-Jk-5A0" customClass="ViewController" customModule="Fyre" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lri-jY-hib">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -367,7 +367,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="GVw-7Y-WBY"/>
                     <connections>
-                        <outlet property="card1" destination="ERY-ku-JGp" id="3aw-vf-nL6"/>
+                        <outlet property="card1" destination="ERY-ku-JGp" id="ydQ-UC-CLT"/>
                         <outlet property="card2" destination="r46-gZ-3hZ" id="XnJ-eT-Qks"/>
                         <outlet property="card3" destination="sxE-pV-Eap" id="hH2-kf-nXa"/>
                         <outlet property="card4" destination="sWo-xL-xLb" id="nof-6d-fd9"/>

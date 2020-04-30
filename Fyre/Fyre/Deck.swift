@@ -10,6 +10,7 @@ import Foundation
 
 struct Deck {
     var deck: [Card] = []
+    var cardCount = 52
     init() {
         let suits = ["H", "C", "S", "D"]
         for number in 1...13 {
@@ -21,9 +22,10 @@ struct Deck {
     }
     
     mutating func randomCard() -> Card{
-        let randomInit = Int.random(in: 0..<52)
+        let randomInit = Int.random(in: 0..<cardCount)
         let cardSelected = deck[randomInit]
         deck.remove(at: randomInit)
+        cardCount -= 1
         return cardSelected
     }
     

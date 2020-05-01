@@ -21,33 +21,31 @@ struct Game {
     var deck = Deck()
     
     mutating func start(playerCount: Int, startingGold: Int) {
-        for _ in 1...playerCount {
+        for num in 1...playerCount {
             starter = deck.startingHand()
-            if playerCount == 1 {
-                personPlayer.cardsInHand = starter
+            if num == 1 {
+                personPlayer.cardsInHand += starter
                 personPlayer.goldRemaining = startingGold
                 personPlayer.person = true
                 playerList.append(personPlayer)
             }
-            else {
-                if playerCount == 2 {
-                    cpu1.cardsInHand = starter
-                    cpu1.goldRemaining = startingGold
-                    cpu1.person = false
-                    playerList.append(cpu1)
-                }
-                else if playerCount == 3 {
-                    cpu2.cardsInHand = starter
-                    cpu2.goldRemaining = startingGold
-                    cpu2.person = false
-                    playerList.append(cpu2)
-                }
-                else if playerCount == 4 {
-                    cpu3.cardsInHand = starter
-                    cpu3.goldRemaining = startingGold
-                    cpu3.person = false
-                    playerList.append(cpu3)
-                }
+            else if num == 2 {
+                cpu1.cardsInHand = starter
+                cpu1.goldRemaining = startingGold
+                cpu1.person = false
+                playerList.append(cpu1)
+            }
+            else if num == 3 {
+                cpu2.cardsInHand = starter
+                cpu2.goldRemaining = startingGold
+                cpu2.person = false
+                playerList.append(cpu2)
+            }
+            else if num == 4 {
+                cpu3.cardsInHand = starter
+                cpu3.goldRemaining = startingGold
+                cpu3.person = false
+                playerList.append(cpu3)
             }
         }
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CB3E0582461B66A007F65F3 /* PlayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB3E0572461B66A007F65F3 /* PlayScreen.swift */; };
 		3CF23090243E204C00A28BB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF2308F243E204C00A28BB5 /* AppDelegate.swift */; };
 		3CF23092243E204C00A28BB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF23091243E204C00A28BB5 /* SceneDelegate.swift */; };
 		3CF23094243E204C00A28BB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF23093243E204C00A28BB5 /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3CB3E0572461B66A007F65F3 /* PlayScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayScreen.swift; sourceTree = "<group>"; };
 		3CF2308C243E204C00A28BB5 /* Fyre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fyre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF2308F243E204C00A28BB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CF23091243E204C00A28BB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				3CF230C124489C0500A28BB5 /* Game.swift */,
 				3CF230C72450C47E00A28BB5 /* Card.swift */,
 				3CF23093243E204C00A28BB5 /* ViewController.swift */,
+				3CB3E0572461B66A007F65F3 /* PlayScreen.swift */,
 				3CF23095243E204C00A28BB5 /* Main.storyboard */,
 				3CF23098243E205100A28BB5 /* Assets.xcassets */,
 				3CF2309A243E205100A28BB5 /* LaunchScreen.storyboard */,
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CF230CA2453114E00A28BB5 /* Deck.swift in Sources */,
+				3CB3E0582461B66A007F65F3 /* PlayScreen.swift in Sources */,
 				3CF230C024489BEA00A28BB5 /* Player.swift in Sources */,
 				3CF230C82450C47E00A28BB5 /* Card.swift in Sources */,
 				3CF230C224489C0500A28BB5 /* Game.swift in Sources */,

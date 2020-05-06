@@ -20,7 +20,7 @@ struct Game {
     var starter: [Card] = []
     var deck = Deck()
     
-    mutating func start(playerCount: Int, startingGold: Int) {
+    init(playerCount: Int, startingGold: Int) {
         for num in 1...playerCount {
             starter = deck.startingHand()
             if num == 1 {

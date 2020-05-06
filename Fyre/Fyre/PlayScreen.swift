@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class PlayScreen {
+class PlayScreen: UIViewController {
     @IBOutlet weak var card1: UIImageView!
     @IBOutlet weak var card2: UIImageView!
     @IBOutlet weak var card3: UIImageView!
@@ -19,5 +19,11 @@ class PlayScreen {
     @IBOutlet weak var card7: UIImageView!
     @IBOutlet weak var card8: UIImageView!
     
+    var game: Game?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print(game?.numOfPlayersValue)
+        // Do any additional setup after loading the view.
+    }
 }

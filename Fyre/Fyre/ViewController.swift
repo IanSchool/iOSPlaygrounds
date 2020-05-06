@@ -22,19 +22,20 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // get a reference of the next view controller
+        // Make new instance of Game
+        let newGame = Game(playerCount: numOfPlayersValue!, startingGold: goldAtStart!)
+        let destinationVC = segue.destination as? PlayScreen
+        destinationVC?.game = newGame
         
+        //card1.image = UIImage(named: game.personPlayer.cardsInHand[0].cardName)
     }
     
     @IBAction func startGame(_ sender: Any) {
         numOfPlayersValue = Int(numOfPlayers.text!)
         goldAtStart = Int(startingGold.text!)
-        var game = Game()
-        game.start(playerCount: numOfPlayersValue!, startingGold: goldAtStart!)
-        print(game.personPlayer.cardsInHand[0].cardName)
-        //PlayScreen.card1.image = UIImage(named: game.personPlayer.cardsInHand[0].cardName)
-        performSegue(withIdentifier: "startGame", sender: nil)
         
+        performSegue(withIdentifier: "startGame", sender: nil)
     }
-
 }
 

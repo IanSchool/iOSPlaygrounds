@@ -290,7 +290,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37h-6p-1hS">
                                                 <rect key="frame" x="0.0" y="0.0" width="400" height="150"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ERY-ku-JGp">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ERY-ku-JGp">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="qj1-9Y-hxp"/>
@@ -370,7 +370,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="GVw-7Y-WBY"/>
                     <connections>
-                        <outlet property="card1" destination="ERY-ku-JGp" id="NrC-PT-gqX"/>
+                        <outlet property="card1" destination="ERY-ku-JGp" id="agD-SF-f0V"/>
                         <outlet property="card2" destination="r46-gZ-3hZ" id="wlf-KG-i1j"/>
                         <outlet property="card3" destination="sxE-pV-Eap" id="LHW-K7-quU"/>
                         <outlet property="card4" destination="sWo-xL-xLb" id="eSk-UK-X04"/>

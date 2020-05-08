@@ -21,6 +21,8 @@ struct Game {
     var deck = Deck()
     
     init(playerCount: Int, startingGold: Int) {
+        numOfPlayersValue = playerCount
+        goldAtStart = startingGold
         for num in 1...playerCount {
             starter = deck.startingHand()
             if num == 1 {

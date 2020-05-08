@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var startingGold: UITextField!
     @IBOutlet weak var numOfPlayers: UITextField!
+    var newGame: Game?
     
     var numOfPlayersValue: Int?
     var goldAtStart: Int?
@@ -24,7 +25,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // get a reference of the next view controller
         // Make new instance of Game
-        let newGame = Game(playerCount: numOfPlayersValue!, startingGold: goldAtStart!)
+        
         let destinationVC = segue.destination as? PlayScreen
         destinationVC?.game = newGame
         
@@ -32,8 +33,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startGame(_ sender: Any) {
+        
         numOfPlayersValue = Int(numOfPlayers.text!)
         goldAtStart = Int(startingGold.text!)
+        newGame = Game(playerCount: numOfPlayersValue!, startingGold: goldAtStart!)
         
         performSegue(withIdentifier: "startGame", sender: nil)
     }

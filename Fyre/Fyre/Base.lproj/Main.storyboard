@@ -223,7 +223,7 @@
         <!--Play Screen-->
         <scene sceneID="NgV-RU-e18">
             <objects>
-                <viewController id="fUp-Jk-5A0" customClass="PlayScreen" sceneMemberID="viewController">
+                <viewController id="fUp-Jk-5A0" customClass="PlayScreen" customModule="Fyre" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lri-jY-hib">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -358,7 +358,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Gold:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wR6-ne-V9U">
-                                <rect key="frame" x="6" y="529" width="80" height="21"/>
+                                <rect key="frame" x="6" y="529" width="139" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -370,14 +370,21 @@
                     </view>
                     <navigationItem key="navigationItem" id="GVw-7Y-WBY"/>
                     <connections>
-                        <outlet property="card1" destination="ERY-ku-JGp" id="agD-SF-f0V"/>
-                        <outlet property="card2" destination="r46-gZ-3hZ" id="wlf-KG-i1j"/>
-                        <outlet property="card3" destination="sxE-pV-Eap" id="LHW-K7-quU"/>
-                        <outlet property="card4" destination="sWo-xL-xLb" id="eSk-UK-X04"/>
-                        <outlet property="card5" destination="Rm5-wq-1St" id="l5V-Mv-06V"/>
-                        <outlet property="card6" destination="Bvh-4i-eQ5" id="1Nz-Uy-chP"/>
-                        <outlet property="card7" destination="G5D-J5-5Lh" id="zMr-At-FOh"/>
-                        <outlet property="card8" destination="FKa-gf-0Ox" id="n30-op-n1p"/>
+                        <outlet property="card1" destination="ERY-ku-JGp" id="YYp-ud-cmB"/>
+                        <outlet property="card2" destination="r46-gZ-3hZ" id="TX5-1h-ntY"/>
+                        <outlet property="card3" destination="sxE-pV-Eap" id="gv0-YJ-IQh"/>
+                        <outlet property="card4" destination="sWo-xL-xLb" id="qrm-aA-FZa"/>
+                        <outlet property="card5" destination="Rm5-wq-1St" id="A5o-7P-ke8"/>
+                        <outlet property="card6" destination="Bvh-4i-eQ5" id="Xlf-Uw-iKu"/>
+                        <outlet property="card7" destination="G5D-J5-5Lh" id="7By-Nu-OGR"/>
+                        <outlet property="card8" destination="FKa-gf-0Ox" id="I11-Zc-0kv"/>
+                        <outlet property="cpu1Cards" destination="KVQ-i1-XyE" id="jVB-5y-L3I"/>
+                        <outlet property="cpu1Gold" destination="CEs-2m-IqI" id="BT4-tC-aWQ"/>
+                        <outlet property="cpu2Cards" destination="Df3-Ec-h7G" id="iKf-69-Asv"/>
+                        <outlet property="cpu2Gold" destination="tg9-ns-juS" id="BNU-Mw-zHB"/>
+                        <outlet property="cpu3Cards" destination="71M-5Y-XVQ" id="2L0-Nj-6jh"/>
+                        <outlet property="cpu3Gold" destination="lqy-A0-B86" id="tV2-1S-EXx"/>
+                        <outlet property="yourGold" destination="wR6-ne-V9U" id="AsX-7h-uA7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fr6-Ce-z68" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class PlayScreen: UIViewController {
+    @IBOutlet weak var currentCard: UIImageView!
     @IBOutlet weak var card1: UIImageView!
     @IBOutlet weak var card2: UIImageView!
     @IBOutlet weak var card3: UIImageView!
@@ -27,6 +28,7 @@ class PlayScreen: UIViewController {
     @IBOutlet weak var cpu3Gold: UILabel!
     
     var game: Game?
+    var turnNum = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +36,46 @@ class PlayScreen: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func updateUI() {
-        if game!.numOfPlayersValue < 4 {
-            cpu3Gold.text = ""
-            cpu3Cards.text = ""
+    @IBAction func nextTurn(_ sender: Any) {
+        if turnNum % game!.numOfPlayersValue == 1 {
+            //click on card and do cardPlayable here
+            //set currentCard to the card you played and remove it from your hand
+            //updateUI()
+            //need to figure out where the raising or folding goes (need buttons for them)
         }
-        else if game!.numOfPlayersValue < 3 {
+        else {
+            //choose card that works for them and use it
+            //if none work add card to their hand (probably wont happen ever)
+        }
+    }
+    
+    func updateUI() {
+        currentCard.image = UIImage(named: game!.cardInPlay.cardName)
+        if game!.numOfPlayersValue == 2 {
             cpu2Gold.text = ""
             cpu2Cards.text = ""
+            cpu3Gold.text = ""
+            cpu3Cards.text = ""
+            
+            cpu1Gold.text = "Gold: \(game!.cpu1.goldRemaining)"
+            cpu1Cards.text = "Cards: \(game!.cpu1.cardsInHand.count)"
+        }
+        else if game!.numOfPlayersValue == 3 {
+            cpu3Gold.text = ""
+            cpu3Cards.text = ""
+            
+            cpu1Gold.text = "Gold: \(game!.cpu1.goldRemaining)"
+            cpu1Cards.text = "Cards: \(game!.cpu1.cardsInHand.count)"
+            cpu2Gold.text = "Gold: \(game!.cpu1.goldRemaining)"
+            cpu2Cards.text = "Cards: \(game!.cpu1.cardsInHand.count)"
+        }
+        else if game!.numOfPlayersValue == 4 {
+            cpu1Gold.text = "Gold: \(game!.cpu1.goldRemaining)"
+            cpu1Cards.text = "Cards: \(game!.cpu1.cardsInHand.count)"
+            cpu2Gold.text = "Gold: \(game!.cpu1.goldRemaining)"
+            cpu2Cards.text = "Cards: \(game!.cpu1.cardsInHand.count)"
+            cpu3Gold.text = "Gold: \(game!.cpu1.goldRemaining)"
+            cpu3Cards.text = "Cards: \(game!.cpu1.cardsInHand.count)"
         }
         
         yourGold.text = "Your Gold: \(game!.personPlayer.goldRemaining)"

@@ -50,6 +50,8 @@ struct Game {
                 playerList.append(cpu3)
             }
         }
+        
+        cardInPlay = deck.randomCard()
     }
     
     func cardPlayable (cardPlayed: Card) -> Bool {

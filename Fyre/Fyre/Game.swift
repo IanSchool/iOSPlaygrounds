@@ -53,11 +53,4 @@ struct Game {
         
         cardInPlay = deck.randomCard()
     }
-    
-    func cardPlayable (cardPlayed: Card) -> Bool {
-        if cardPlayed.cardNum == cardInPlay.cardNum || cardPlayed.cardType == cardInPlay.cardType {
-            return true
-        }
-        return false
-    }
 }

@@ -28,12 +28,48 @@ class PlayScreen: UIViewController {
     @IBOutlet weak var cpu3Gold: UILabel!
     
     var game: Game?
-    var turnNum = 1
+    var turnNum = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func currentCardTapped(_ sender: Any) {
+        print(currentCard.image?.accessibilityIdentifier)
+    }
+    
+    @IBAction func card1Tapped(_ sender: Any){
+        print(card1.image?.accessibilityIdentifier)
+    }
+    
+    @IBAction func card2Tapped(_ sender: Any) {
+    }
+    
+   
+    @IBAction func card3Tapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func card4Tapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func card5Tapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func card6Tapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func card7Tapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func card8Tapped(_ sender: Any) {
+        
     }
     
     @IBAction func nextTurn(_ sender: Any) {

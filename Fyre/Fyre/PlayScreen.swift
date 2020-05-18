@@ -33,15 +33,15 @@ class PlayScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-        // Do any additional setup after loading the view.
+        
     }
     
-    @IBAction func currentCardTapped(_ sender: Any) {
-        print(currentCard.image?.accessibilityIdentifier)
+    @IBAction func currentCardTapped(sender: UITapGestureRecognizer) {
+        print("hellow")
     }
     
-    @IBAction func card1Tapped(_ sender: Any){
-        print(card1.image?.accessibilityIdentifier)
+    @IBAction func card1Tapped(sender: UITapGestureRecognizer){
+        print("hello world")
     }
     
     @IBAction func card2Tapped(_ sender: Any) {

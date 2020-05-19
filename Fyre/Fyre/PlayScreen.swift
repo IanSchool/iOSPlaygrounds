@@ -29,6 +29,8 @@ class PlayScreen: UIViewController {
     
     var game: Game?
     var turnNum = 0
+    let suits = ["H", "C", "S", "D"]
+    var cardPlayedName: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,45 +39,47 @@ class PlayScreen: UIViewController {
     }
     
     @IBAction func currentCardTapped(sender: UITapGestureRecognizer) {
-        print("hellow")
+        
     }
     
     @IBAction func card1Tapped(sender: UITapGestureRecognizer){
-        print("hello world")
+        if cardPlayable(card: card1) {
+            currentCard.image = card1.image
+            game!.cardInPlay = game!.personPlayer.cardsInHand[0]
+            game!.personPlayer.cardsInHand.remove(at: 0)
+        }
     }
     
-    @IBAction func card2Tapped(_ sender: Any) {
-    }
-    
-   
-    @IBAction func card3Tapped(_ sender: Any) {
+    @IBAction func card2Tapped(sender: UITapGestureRecognizer) {
         
     }
     
-    @IBAction func card4Tapped(_ sender: Any) {
+    @IBAction func card3Tapped(sender: UITapGestureRecognizer) {
         
     }
     
-    @IBAction func card5Tapped(_ sender: Any) {
+    @IBAction func card4Tapped(sender: UITapGestureRecognizer) {
         
     }
     
-    @IBAction func card6Tapped(_ sender: Any) {
+    @IBAction func card5Tapped(sender: UITapGestureRecognizer) {
         
     }
     
-    @IBAction func card7Tapped(_ sender: Any) {
-        
+    @IBAction func card6Tapped(sender: UITapGestureRecognizer) {
+        print("hello world 6")
     }
     
-    @IBAction func card8Tapped(_ sender: Any) {
-        
+    @IBAction func card7Tapped(sender: UITapGestureRecognizer) {
+        print("hello world 7")
+    }
+    
+    @IBAction func card8Tapped(sender: UITapGestureRecognizer) {
+        print("hello world 8")
     }
     
     @IBAction func nextTurn(_ sender: Any) {
         if turnNum % game!.numOfPlayersValue == 1 {
-            //click on card and do cardPlayable here
-            //set currentCard to the card you played and remove it from your hand
             //updateUI()
             //need to figure out where the raising or folding goes (need buttons for them)
         }
@@ -114,6 +118,15 @@ class PlayScreen: UIViewController {
             cpu3Cards.text = "Cards: \(game!.cpu1.cardsInHand.count)"
         }
         
+        card1.image = nil
+        card2.image = nil
+        card3.image = nil
+        card4.image = nil
+        card5.image = nil
+        card6.image = nil
+        card7.image = nil
+        card8.image = nil
+        
         yourGold.text = "Your Gold: \(game!.personPlayer.goldRemaining)"
         let playerCardCount = game!.personPlayer.cardsInHand.count
         for num in 1...playerCardCount {
@@ -142,5 +155,26 @@ class PlayScreen: UIViewController {
                 card8.image = UIImage(named: game!.personPlayer.cardsInHand[7].cardName)
             }
         }
+    }
+    
+    func cardPlayable(card: UIImageView) -> Bool {
+        for number in 1...13 {
+            for s in suits {
+                cardPlayedName = "\(number)\(s)"
+                if UIImage(named: cardPlayedName) == card.image {
+                    for num in 1...13 {
+                        if UIImage(named: "\(num)\(s)") == currentCard.image {
+                            return true
+                        }
+                    }
+                    for s2 in suits {
+                        if UIImage(named: "\(number)\(s2)") == currentCard.image {
+                            return true
+                        }
+                    }
+                }
+            }
+        }
+        return false
     }
 }

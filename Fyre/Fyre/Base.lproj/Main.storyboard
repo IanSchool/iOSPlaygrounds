@@ -233,7 +233,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Zca-YM-ELG" appends="YES" id="mDL-Su-Uf1"/>
+                                    <outletCollection property="gestureRecognizers" destination="Zca-YM-ELG" appends="YES" id="eOB-Az-Z5U"/>
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Pot: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8I-it-D6h">
@@ -264,15 +264,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gold:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEs-2m-IqI">
-                                <rect key="frame" x="186" y="142" width="41" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cards:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVQ-i1-XyE">
-                                <rect key="frame" x="175" y="102" width="64" height="39"/>
+                                <rect key="frame" x="158" y="95" width="99" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -292,7 +285,7 @@
                                                     <constraint firstAttribute="width" constant="100" id="aoL-M5-fpa"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="9CA-FI-QvH" appends="YES" id="7Ni-0Z-8VE"/>
+                                                    <outletCollection property="gestureRecognizers" destination="9CA-FI-QvH" appends="YES" id="J5z-oa-Md4"/>
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r46-gZ-3hZ">
@@ -302,7 +295,7 @@
                                                     <constraint firstAttribute="width" constant="100" id="lt1-ad-ghG"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="CFw-1n-bIh" appends="YES" id="aEa-OX-C33"/>
+                                                    <outletCollection property="gestureRecognizers" destination="CFw-1n-bIh" appends="YES" id="oUv-tE-FSD"/>
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sxE-pV-Eap">
@@ -312,7 +305,7 @@
                                                     <constraint firstAttribute="width" constant="100" id="QEB-4A-1vp"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="zLX-BY-x6w" appends="YES" id="eSJ-tA-lWi"/>
+                                                    <outletCollection property="gestureRecognizers" destination="zLX-BY-x6w" appends="YES" id="ftd-rJ-hUl"/>
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sWo-xL-xLb">
@@ -322,7 +315,7 @@
                                                     <constraint firstAttribute="width" constant="100" id="6cF-mA-lbM"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="FES-8W-ktg" appends="YES" id="2da-3O-XrD"/>
+                                                    <outletCollection property="gestureRecognizers" destination="FES-8W-ktg" appends="YES" id="k0R-kB-6zh"/>
                                                 </connections>
                                             </imageView>
                                         </subviews>
@@ -337,7 +330,7 @@
                                                     <constraint firstAttribute="width" constant="100" id="lld-3U-Iys"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="g0Z-hv-0yL" appends="YES" id="5YJ-va-rPf"/>
+                                                    <outletCollection property="gestureRecognizers" destination="g0Z-hv-0yL" appends="YES" id="cke-eX-aih"/>
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bvh-4i-eQ5">
@@ -347,7 +340,7 @@
                                                     <constraint firstAttribute="width" constant="100" id="6Jl-1B-SRI"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="Nlt-XJ-Ggj" appends="YES" id="Rkt-D3-l7j"/>
+                                                    <outletCollection property="gestureRecognizers" destination="Nlt-XJ-Ggj" appends="YES" id="LaV-4B-41F"/>
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G5D-J5-5Lh">
@@ -357,14 +350,14 @@
                                                     <constraint firstAttribute="width" constant="100" id="Om8-BQ-Plr"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="JRb-fA-MaG" appends="YES" id="LHa-rB-hhd"/>
+                                                    <outletCollection property="gestureRecognizers" destination="JRb-fA-MaG" appends="YES" id="wIb-ML-Iqr"/>
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FKa-gf-0Ox">
                                                 <rect key="frame" x="300" y="0.0" width="100" height="150"/>
                                                 <gestureRecognizers/>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="aSX-Ja-NOY" appends="YES" id="WgL-N8-Maw"/>
+                                                    <outletCollection property="gestureRecognizers" destination="aSX-Ja-NOY" appends="YES" id="p5S-Qe-CJW"/>
                                                 </connections>
                                             </imageView>
                                         </subviews>
@@ -393,6 +386,13 @@
                                     <action selector="nextTurn:" destination="fUp-Jk-5A0" eventType="touchUpInside" id="DBh-HY-bgo"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gold:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEs-2m-IqI">
+                                <rect key="frame" x="167" y="142" width="81" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="iHV-uA-XrI"/>
@@ -403,7 +403,7 @@
                         <outlet property="card2" destination="r46-gZ-3hZ" id="TX5-1h-ntY"/>
                         <outlet property="card3" destination="sxE-pV-Eap" id="gv0-YJ-IQh"/>
                         <outlet property="card4" destination="sWo-xL-xLb" id="qrm-aA-FZa"/>
-                        <outlet property="card5" destination="Rm5-wq-1St" id="A5o-7P-ke8"/>
+                        <outlet property="card5" destination="Rm5-wq-1St" id="OP8-cq-Bdd"/>
                         <outlet property="card6" destination="Bvh-4i-eQ5" id="Xlf-Uw-iKu"/>
                         <outlet property="card7" destination="G5D-J5-5Lh" id="7By-Nu-OGR"/>
                         <outlet property="card8" destination="FKa-gf-0Ox" id="I11-Zc-0kv"/>
@@ -420,47 +420,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fr6-Ce-z68" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="9CA-FI-QvH">
                     <connections>
-                        <action selector="card1TappedWithSender:" destination="fUp-Jk-5A0" id="pft-8b-e2b"/>
+                        <action selector="card1TappedWithSender:" destination="fUp-Jk-5A0" id="TW1-aD-O88"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="CFw-1n-bIh">
                     <connections>
-                        <action selector="card2Tapped:" destination="fUp-Jk-5A0" id="zEI-LA-LB5"/>
+                        <action selector="card2Tapped:" destination="fUp-Jk-5A0" id="53F-7X-nrm"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="zLX-BY-x6w">
                     <connections>
-                        <action selector="card3Tapped:" destination="fUp-Jk-5A0" id="7a7-9G-Xt4"/>
+                        <action selector="card3Tapped:" destination="fUp-Jk-5A0" id="jXp-3h-MSU"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="FES-8W-ktg">
                     <connections>
-                        <action selector="card4Tapped:" destination="fUp-Jk-5A0" id="3Dx-Kf-h1Z"/>
+                        <action selector="card4Tapped:" destination="fUp-Jk-5A0" id="bXc-Mm-Pck"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="g0Z-hv-0yL">
                     <connections>
-                        <action selector="card5Tapped:" destination="fUp-Jk-5A0" id="BxH-dl-UD8"/>
+                        <action selector="card5Tapped:" destination="fUp-Jk-5A0" id="lGy-7D-yjA"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="Nlt-XJ-Ggj">
                     <connections>
-                        <action selector="card6Tapped:" destination="fUp-Jk-5A0" id="Aho-w5-Dgr"/>
+                        <action selector="card6Tapped:" destination="fUp-Jk-5A0" id="Uel-SK-gZo"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="JRb-fA-MaG">
                     <connections>
-                        <action selector="card7Tapped:" destination="fUp-Jk-5A0" id="uex-hR-klH"/>
+                        <action selector="card7Tapped:" destination="fUp-Jk-5A0" id="SSM-rY-DVT"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="aSX-Ja-NOY">
                     <connections>
-                        <action selector="card8Tapped:" destination="fUp-Jk-5A0" id="0y9-hX-Zj2"/>
+                        <action selector="card8Tapped:" destination="fUp-Jk-5A0" id="rru-W8-B7C"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="Zca-YM-ELG">
                     <connections>
-                        <action selector="handleTapWithSender:" destination="fUp-Jk-5A0" id="eqt-5z-ui4"/>
+                        <action selector="currentCardTappedWithSender:" destination="fUp-Jk-5A0" id="yJq-de-HSs"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

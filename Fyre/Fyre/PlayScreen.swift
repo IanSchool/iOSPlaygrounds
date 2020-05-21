@@ -44,44 +44,73 @@ class PlayScreen: UIViewController {
     
     @IBAction func card1Tapped(sender: UITapGestureRecognizer){
         if cardPlayable(card: card1) {
-            currentCard.image = card1.image
             game!.cardInPlay = game!.personPlayer.cardsInHand[0]
             game!.personPlayer.cardsInHand.remove(at: 0)
+            updateUI()
         }
     }
     
     @IBAction func card2Tapped(sender: UITapGestureRecognizer) {
-        
+        if cardPlayable(card: card2) {
+            game!.cardInPlay = game!.personPlayer.cardsInHand[1]
+            game!.personPlayer.cardsInHand.remove(at: 1)
+            updateUI()
+        }
     }
     
     @IBAction func card3Tapped(sender: UITapGestureRecognizer) {
-        
+        if cardPlayable(card: card3) {
+            game!.cardInPlay = game!.personPlayer.cardsInHand[2]
+            game!.personPlayer.cardsInHand.remove(at: 2)
+            updateUI()
+        }
     }
     
     @IBAction func card4Tapped(sender: UITapGestureRecognizer) {
-        
+     if cardPlayable(card: card4) {
+            game!.cardInPlay = game!.personPlayer.cardsInHand[3]
+            game!.personPlayer.cardsInHand.remove(at: 3)
+            updateUI()
+        }
     }
     
     @IBAction func card5Tapped(sender: UITapGestureRecognizer) {
-        
+        if cardPlayable(card: card5) {
+            game!.cardInPlay = game!.personPlayer.cardsInHand[4]
+            game!.personPlayer.cardsInHand.remove(at: 4)
+            updateUI()
+        }
     }
     
     @IBAction func card6Tapped(sender: UITapGestureRecognizer) {
-        print("hello world 6")
+        if cardPlayable(card: card6) {
+            game!.cardInPlay = game!.personPlayer.cardsInHand[5]
+            game!.personPlayer.cardsInHand.remove(at: 5)
+            updateUI()
+        }
     }
     
     @IBAction func card7Tapped(sender: UITapGestureRecognizer) {
-        print("hello world 7")
+        if cardPlayable(card: card7) {
+            game!.cardInPlay = game!.personPlayer.cardsInHand[6]
+            game!.personPlayer.cardsInHand.remove(at: 6)
+            updateUI()
+        }
     }
     
     @IBAction func card8Tapped(sender: UITapGestureRecognizer) {
-        print("hello world 8")
+        if cardPlayable(card: card8) {
+            game!.cardInPlay = game!.personPlayer.cardsInHand[7]
+            game!.personPlayer.cardsInHand.remove(at: 7)
+            updateUI()
+        }
     }
     
     @IBAction func nextTurn(_ sender: Any) {
         if turnNum % game!.numOfPlayersValue == 1 {
             //updateUI()
             //need to figure out where the raising or folding goes (need buttons for them)
+            //playable bool
         }
         else {
             //choose card that works for them and use it

@@ -35,15 +35,10 @@ class PlayScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-        
-    }
-    
-    @IBAction func currentCardTapped(sender: UITapGestureRecognizer) {
-        
     }
     
     @IBAction func card1Tapped(sender: UITapGestureRecognizer){
-        if cardPlayable(card: card1) {
+        if cardPlayable(card: game!.personPlayer.cardsInHand[0]) {
             game!.cardInPlay = game!.personPlayer.cardsInHand[0]
             game!.personPlayer.cardsInHand.remove(at: 0)
             updateUI()
@@ -51,7 +46,7 @@ class PlayScreen: UIViewController {
     }
     
     @IBAction func card2Tapped(sender: UITapGestureRecognizer) {
-        if cardPlayable(card: card2) {
+        if cardPlayable(card: game!.personPlayer.cardsInHand[1]) {
             game!.cardInPlay = game!.personPlayer.cardsInHand[1]
             game!.personPlayer.cardsInHand.remove(at: 1)
             updateUI()
@@ -59,7 +54,7 @@ class PlayScreen: UIViewController {
     }
     
     @IBAction func card3Tapped(sender: UITapGestureRecognizer) {
-        if cardPlayable(card: card3) {
+        if cardPlayable(card: game!.personPlayer.cardsInHand[2]) {
             game!.cardInPlay = game!.personPlayer.cardsInHand[2]
             game!.personPlayer.cardsInHand.remove(at: 2)
             updateUI()
@@ -67,7 +62,7 @@ class PlayScreen: UIViewController {
     }
     
     @IBAction func card4Tapped(sender: UITapGestureRecognizer) {
-     if cardPlayable(card: card4) {
+     if cardPlayable(card: game!.personPlayer.cardsInHand[3]) {
             game!.cardInPlay = game!.personPlayer.cardsInHand[3]
             game!.personPlayer.cardsInHand.remove(at: 3)
             updateUI()
@@ -75,7 +70,7 @@ class PlayScreen: UIViewController {
     }
     
     @IBAction func card5Tapped(sender: UITapGestureRecognizer) {
-        if cardPlayable(card: card5) {
+        if cardPlayable(card: game!.personPlayer.cardsInHand[4]) {
             game!.cardInPlay = game!.personPlayer.cardsInHand[4]
             game!.personPlayer.cardsInHand.remove(at: 4)
             updateUI()
@@ -83,7 +78,7 @@ class PlayScreen: UIViewController {
     }
     
     @IBAction func card6Tapped(sender: UITapGestureRecognizer) {
-        if cardPlayable(card: card6) {
+        if cardPlayable(card: game!.personPlayer.cardsInHand[5]) {
             game!.cardInPlay = game!.personPlayer.cardsInHand[5]
             game!.personPlayer.cardsInHand.remove(at: 5)
             updateUI()
@@ -91,7 +86,7 @@ class PlayScreen: UIViewController {
     }
     
     @IBAction func card7Tapped(sender: UITapGestureRecognizer) {
-        if cardPlayable(card: card7) {
+        if cardPlayable(card: game!.personPlayer.cardsInHand[6]) {
             game!.cardInPlay = game!.personPlayer.cardsInHand[6]
             game!.personPlayer.cardsInHand.remove(at: 6)
             updateUI()
@@ -99,7 +94,7 @@ class PlayScreen: UIViewController {
     }
     
     @IBAction func card8Tapped(sender: UITapGestureRecognizer) {
-        if cardPlayable(card: card8) {
+        if cardPlayable(card: game!.personPlayer.cardsInHand[7]) {
             game!.cardInPlay = game!.personPlayer.cardsInHand[7]
             game!.personPlayer.cardsInHand.remove(at: 7)
             updateUI()
@@ -186,23 +181,12 @@ class PlayScreen: UIViewController {
         }
     }
     
-    func cardPlayable(card: UIImageView) -> Bool {
-        for number in 1...13 {
-            for s in suits {
-                cardPlayedName = "\(number)\(s)"
-                if UIImage(named: cardPlayedName) == card.image {
-                    for num in 1...13 {
-                        if UIImage(named: "\(num)\(s)") == currentCard.image {
-                            return true
-                        }
-                    }
-                    for s2 in suits {
-                        if UIImage(named: "\(number)\(s2)") == currentCard.image {
-                            return true
-                        }
-                    }
-                }
-            }
+    func cardPlayable(card: Card) -> Bool {
+        if game!.cardInPlay.cardType == card.cardType {
+            return true
+        }
+        else if game!.cardInPlay.cardNum == card.cardNum {
+            return true
         }
         return false
     }

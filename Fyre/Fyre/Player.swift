@@ -13,13 +13,11 @@ struct Player {
     var goldRemaining: Int
     var person: Bool
     
-    func showHand() -> String {
-        var hand: String = ""
-        if cardsInHand.count != 0 {
-            for num in 0...cardsInHand.count - 1 {
-                hand += cardsInHand[num].cardName + ", "
-            }
-        }
-        return hand
+    func fold() {
+        
+    }
+    
+    func raise() {
+        
     }
 }

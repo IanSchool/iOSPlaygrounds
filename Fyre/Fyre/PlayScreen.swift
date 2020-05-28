@@ -26,6 +26,8 @@ class PlayScreen: UIViewController {
     @IBOutlet weak var cpu2Gold: UILabel!
     @IBOutlet weak var cpu3Cards: UILabel!
     @IBOutlet weak var cpu3Gold: UILabel!
+    @IBOutlet var raiseButtons: [UIButton]!
+    @IBOutlet weak var currentPot: UILabel!
     
     var game: Game?
     var turnNum = 1
@@ -118,6 +120,52 @@ class PlayScreen: UIViewController {
         }
     }
     
+    @IBAction func fold(_ sender: Any) {
+        if playerTurn {
+            
+        }
+    }
+    
+    @IBAction func raise(_ sender: Any) {
+        if playerTurn {
+            for button in raiseButtons {
+                button.isEnabled = true
+            }
+        }
+    }
+    
+    @IBAction func oneFourthRaise(_ sender: Any) {
+        game!.currentPot += game!.personPlayer.raise(amount: 0.25)
+        for button in raiseButtons {
+            button.isEnabled = false
+        }
+        updateUI()
+    }
+    
+    @IBAction func oneThirdRaise(_ sender: Any) {
+        game!.currentPot += game!.personPlayer.raise(amount: 0.33)
+        for button in raiseButtons {
+            button.isEnabled = false
+        }
+        updateUI()
+    }
+    
+    @IBAction func oneHalfRaise(_ sender: Any) {
+        game!.currentPot += game!.personPlayer.raise(amount: 0.5)
+        for button in raiseButtons {
+            button.isEnabled = false
+        }
+        updateUI()
+    }
+    
+    @IBAction func allInRaise(_ sender: Any) {
+        game!.currentPot += game!.personPlayer.raise(amount: 1)
+        for button in raiseButtons {
+            button.isEnabled = false
+        }
+        updateUI()
+    }
+    
     @IBAction func nextTurn(_ sender: Any) {
         turnNum += 1
         if turnNum % game!.numOfPlayersValue == 1 {
@@ -201,6 +249,8 @@ class PlayScreen: UIViewController {
                 card8.image = UIImage(named: game!.personPlayer.cardsInHand[7].cardName)
             }
         }
+        
+        currentPot.text = "Current Pot: \(game!.currentPot)"
     }
     
     func cardPlayable(card: Card) -> Bool {

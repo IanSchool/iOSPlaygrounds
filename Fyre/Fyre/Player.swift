@@ -17,7 +17,9 @@ struct Player {
         
     }
     
-    func raise() {
-        
+    mutating func raise(amount: Double) -> Int {
+        let raisedAmount = Double(goldRemaining) * amount
+        goldRemaining -= Int(raisedAmount)
+        return Int(raisedAmount)
     }
 }

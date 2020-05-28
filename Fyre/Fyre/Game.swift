@@ -19,6 +19,7 @@ struct Game {
     var cardInPlay: Card = Card(cardNum: 0, cardType: "", cardName: "")
     var starter: [Card] = []
     var deck = Deck()
+    var currentPot: Int
     
     init(playerCount: Int, startingGold: Int) {
         numOfPlayersValue = playerCount
@@ -51,5 +52,6 @@ struct Game {
             }
         }
         cardInPlay = deck.randomCard()
+        currentPot = 0
     }
 }

@@ -13,8 +13,10 @@ struct Player {
     var goldRemaining: Int
     var person: Bool
     
-    func fold() {
-        
+    mutating func fold() {
+        for _ in 1...cardsInHand.count {
+            cardsInHand.remove(at: 0)
+        }
     }
     
     mutating func raise(amount: Double) -> Int {

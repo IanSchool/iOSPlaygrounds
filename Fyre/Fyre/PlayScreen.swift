@@ -34,6 +34,11 @@ class PlayScreen: UIViewController {
     let suits = ["H", "C", "S", "D"]
     var cardPlayedName: String = ""
     var playerTurn = true
+    var playerFold = false
+    var cpu1Fold = false
+    var cpu2Fold = false
+    var cpu3Fold = false
+    var raisedAmount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,7 +127,10 @@ class PlayScreen: UIViewController {
     
     @IBAction func fold(_ sender: Any) {
         if playerTurn {
+            game!.personPlayer.fold()
             
+            playerFold = false
+            playerTurn = false
         }
     }
     
@@ -136,6 +144,7 @@ class PlayScreen: UIViewController {
     
     @IBAction func oneFourthRaise(_ sender: Any) {
         game!.currentPot += game!.personPlayer.raise(amount: 0.25)
+        raisedAmount = game!.personPlayer.raise(amount: 0.25)
         for button in raiseButtons {
             button.isEnabled = false
         }
@@ -143,7 +152,8 @@ class PlayScreen: UIViewController {
     }
     
     @IBAction func oneThirdRaise(_ sender: Any) {
-        game!.currentPot += game!.personPlayer.raise(amount: 0.33)
+        game!.currentPot += game!.personPlayer.raise(amount: 1/3)
+        raisedAmount = game!.personPlayer.raise(amount: 1/3)
         for button in raiseButtons {
             button.isEnabled = false
         }
@@ -152,6 +162,7 @@ class PlayScreen: UIViewController {
     
     @IBAction func oneHalfRaise(_ sender: Any) {
         game!.currentPot += game!.personPlayer.raise(amount: 0.5)
+        raisedAmount = game!.personPlayer.raise(amount: 0.5)
         for button in raiseButtons {
             button.isEnabled = false
         }
@@ -160,6 +171,7 @@ class PlayScreen: UIViewController {
     
     @IBAction func allInRaise(_ sender: Any) {
         game!.currentPot += game!.personPlayer.raise(amount: 1)
+        raisedAmount = game!.personPlayer.raise(amount: 1)
         for button in raiseButtons {
             button.isEnabled = false
         }
@@ -168,19 +180,69 @@ class PlayScreen: UIViewController {
     
     @IBAction func nextTurn(_ sender: Any) {
         turnNum += 1
-        if turnNum % game!.numOfPlayersValue == 1 {
-            playerTurn = true
-            
-            
-            //updateUI()
-            //need to figure out where the raising or folding goes (need buttons for them)
-            //playable bool
+        
+        if turnNum > game!.numOfPlayersValue {
+            turnNum = 1
         }
-        else {
+        
+        if turnNum == 1 {
+            if !playerFold {
+                playerTurn = true
+            }
+        }
+        else if turnNum == 2 {
             playerTurn = false
-            //choose card that works for them and use it
-            //if none work add card to their hand (probably wont happen ever)
+            if game!.cpu1.goldRemaining >= raisedAmount {
+                for num in 0...game!.cpu1.cardsInHand.count - 1 {
+                    if cardPlayable(card: game!.cpu1.cardsInHand[num]) {
+                        game!.cardInPlay = game!.cpu1.cardsInHand[num]
+                        game!.cpu1.cardsInHand.remove(at: num)
+                        updateUI()
+                        break
+                    }
+                }
+                game!.cpu1.fold()
+            }
+            else {
+                game!.cpu1.fold()
+            }
         }
+        else if turnNum == 3 {
+            playerTurn = false
+            if game!.cpu2.goldRemaining >= raisedAmount {
+                for num in 0...game!.cpu2.cardsInHand.count - 1 {
+                    if cardPlayable(card: game!.cpu2.cardsInHand[num]) {
+                        game!.cardInPlay = game!.cpu2.cardsInHand[num]
+                        game!.cpu2.cardsInHand.remove(at: num)
+                        updateUI()
+                        break
+                    }
+                }
+                game!.cpu2.fold()
+            }
+            else {
+                game!.cpu2.fold()
+            }
+        }
+        else if turnNum == 4 {
+            playerTurn = false
+            if game!.cpu3.goldRemaining >= raisedAmount {
+                for num in 0...game!.cpu3.cardsInHand.count - 1 {
+                    if cardPlayable(card: game!.cpu3.cardsInHand[num]) {
+                        game!.cardInPlay = game!.cpu3.cardsInHand[num]
+                        game!.cpu3.cardsInHand.remove(at: num)
+                        updateUI()
+                        break
+                    }
+                }
+                game!.cpu3.fold()
+            }
+            else {
+                game!.cpu3.fold()
+            }
+        }
+        
+        updateUI()
     }
     
     func updateUI() {

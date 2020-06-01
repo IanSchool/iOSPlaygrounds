@@ -28,6 +28,7 @@ class PlayScreen: UIViewController {
     @IBOutlet weak var cpu3Gold: UILabel!
     @IBOutlet var raiseButtons: [UIButton]!
     @IBOutlet weak var currentPot: UILabel!
+    @IBOutlet weak var yourTurn: UILabel!
     
     var game: Game?
     var turnNum = 1
@@ -188,57 +189,75 @@ class PlayScreen: UIViewController {
         if turnNum == 1 {
             if !playerFold {
                 playerTurn = true
+                yourTurn.text = "It is your turn"
             }
         }
         else if turnNum == 2 {
-            playerTurn = false
-            if game!.cpu1.goldRemaining >= raisedAmount {
-                for num in 0...game!.cpu1.cardsInHand.count - 1 {
-                    if cardPlayable(card: game!.cpu1.cardsInHand[num]) {
-                        game!.cardInPlay = game!.cpu1.cardsInHand[num]
-                        game!.cpu1.cardsInHand.remove(at: num)
-                        updateUI()
-                        break
+            if !cpu1Fold {
+                playerTurn = false
+                if game!.cpu1.goldRemaining >= raisedAmount {
+                    for num in 0...game!.cpu1.cardsInHand.count - 1 {
+                        if cardPlayable(card: game!.cpu1.cardsInHand[num]) {
+                            game!.cpu1.goldRemaining -= raisedAmount
+                            game!.currentPot += raisedAmount
+                            game!.cardInPlay = game!.cpu1.cardsInHand[num]
+                            game!.cpu1.cardsInHand.remove(at: num)
+                            updateUI()
+                            break
+                        }
                     }
+                    game!.cpu1.fold()
                 }
-                game!.cpu1.fold()
-            }
-            else {
-                game!.cpu1.fold()
+                else {
+                    game!.cpu1.fold()
+                }
+                yourTurn.text = ""
             }
         }
         else if turnNum == 3 {
             playerTurn = false
-            if game!.cpu2.goldRemaining >= raisedAmount {
-                for num in 0...game!.cpu2.cardsInHand.count - 1 {
-                    if cardPlayable(card: game!.cpu2.cardsInHand[num]) {
-                        game!.cardInPlay = game!.cpu2.cardsInHand[num]
-                        game!.cpu2.cardsInHand.remove(at: num)
-                        updateUI()
-                        break
+            if !cpu2Fold {
+                playerTurn = false
+                if game!.cpu2.goldRemaining >= raisedAmount {
+                    for num in 0...game!.cpu2.cardsInHand.count - 1 {
+                        if cardPlayable(card: game!.cpu2.cardsInHand[num]) {
+                            game!.cpu1.goldRemaining -= raisedAmount
+                            game!.currentPot += raisedAmount
+                            game!.cardInPlay = game!.cpu2.cardsInHand[num]
+                            game!.cpu2.cardsInHand.remove(at: num)
+                            updateUI()
+                            break
+                        }
                     }
+                    game!.cpu2.fold()
                 }
-                game!.cpu2.fold()
-            }
-            else {
-                game!.cpu2.fold()
+                else {
+                    game!.cpu2.fold()
+                }
+                yourTurn.text = ""
             }
         }
         else if turnNum == 4 {
             playerTurn = false
-            if game!.cpu3.goldRemaining >= raisedAmount {
-                for num in 0...game!.cpu3.cardsInHand.count - 1 {
-                    if cardPlayable(card: game!.cpu3.cardsInHand[num]) {
-                        game!.cardInPlay = game!.cpu3.cardsInHand[num]
-                        game!.cpu3.cardsInHand.remove(at: num)
-                        updateUI()
-                        break
+            if !cpu3Fold {
+                playerTurn = false
+                if game!.cpu3.goldRemaining >= raisedAmount {
+                    for num in 0...game!.cpu3.cardsInHand.count - 1 {
+                        if cardPlayable(card: game!.cpu3.cardsInHand[num]) {
+                            game!.cpu1.goldRemaining -= raisedAmount
+                            game!.currentPot += raisedAmount
+                            game!.cardInPlay = game!.cpu3.cardsInHand[num]
+                            game!.cpu3.cardsInHand.remove(at: num)
+                            updateUI()
+                            break
+                        }
                     }
+                    game!.cpu3.fold()
                 }
-                game!.cpu3.fold()
-            }
-            else {
-                game!.cpu3.fold()
+                else {
+                    game!.cpu3.fold()
+                }
+                yourTurn.text = ""
             }
         }
         

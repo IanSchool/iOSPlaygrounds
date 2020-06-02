@@ -145,6 +145,7 @@ class PlayScreen: UIViewController {
     
     @IBAction func oneFourthRaise(_ sender: Any) {
         game!.currentPot += game!.personPlayer.raise(amount: 0.25)
+        game!.personPlayer.goldRemaining -= game!.personPlayer.raise(amount: 0.25)
         raisedAmount = game!.personPlayer.raise(amount: 0.25)
         for button in raiseButtons {
             button.isEnabled = false
@@ -154,6 +155,7 @@ class PlayScreen: UIViewController {
     
     @IBAction func oneThirdRaise(_ sender: Any) {
         game!.currentPot += game!.personPlayer.raise(amount: 1/3)
+        game!.personPlayer.goldRemaining -= game!.personPlayer.raise(amount: 1/3)
         raisedAmount = game!.personPlayer.raise(amount: 1/3)
         for button in raiseButtons {
             button.isEnabled = false
@@ -163,6 +165,7 @@ class PlayScreen: UIViewController {
     
     @IBAction func oneHalfRaise(_ sender: Any) {
         game!.currentPot += game!.personPlayer.raise(amount: 0.5)
+        game!.personPlayer.goldRemaining -= game!.personPlayer.raise(amount: 0.5)
         raisedAmount = game!.personPlayer.raise(amount: 0.5)
         for button in raiseButtons {
             button.isEnabled = false
@@ -172,6 +175,7 @@ class PlayScreen: UIViewController {
     
     @IBAction func allInRaise(_ sender: Any) {
         game!.currentPot += game!.personPlayer.raise(amount: 1)
+        game!.personPlayer.goldRemaining -= game!.personPlayer.raise(amount: 1)
         raisedAmount = game!.personPlayer.raise(amount: 1)
         for button in raiseButtons {
             button.isEnabled = false
@@ -187,6 +191,8 @@ class PlayScreen: UIViewController {
         }
         
         if turnNum == 1 {
+            raisePhase()
+            
             if !playerFold {
                 playerTurn = true
                 yourTurn.text = "It is your turn"
@@ -342,5 +348,10 @@ class PlayScreen: UIViewController {
             return true
         }
         return false
+    }
+    
+    func raisePhase() {
+        yourTurn.text = "Raise Phase"
+        
     }
 }

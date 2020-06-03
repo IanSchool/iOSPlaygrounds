@@ -378,10 +378,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDS-Ig-oxC">
-                                <rect key="frame" x="304" y="520" width="67" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDS-Ig-oxC">
+                                <rect key="frame" x="299" y="520" width="78" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Next Turn"/>
+                                <state key="normal" title="Start Game"/>
                                 <connections>
                                     <action selector="nextTurn:" destination="fUp-Jk-5A0" eventType="touchUpInside" id="DBh-HY-bgo"/>
                                 </connections>
@@ -441,8 +441,8 @@
                                     <action selector="oneThirdRaise:" destination="fUp-Jk-5A0" eventType="touchUpInside" id="PH0-4g-6eV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="It is your turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGu-Yx-Lrk">
-                                <rect key="frame" x="12" y="558" width="101" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" _" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGu-Yx-Lrk">
+                                <rect key="frame" x="12" y="558" width="146" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -485,6 +485,9 @@
                         <outlet property="cpu3Gold" destination="lqy-A0-B86" id="tV2-1S-EXx"/>
                         <outlet property="currentCard" destination="Ne0-kc-gvv" id="k8S-El-58i"/>
                         <outlet property="currentPot" destination="e8I-it-D6h" id="aim-Ax-51I"/>
+                        <outlet property="foldButton" destination="tJ9-Eo-oDv" id="iz8-PH-GQf"/>
+                        <outlet property="nextTurnButton" destination="dDS-Ig-oxC" id="nIm-hw-232"/>
+                        <outlet property="raiseActual" destination="Wm2-vB-zkR" id="E9I-ri-p5X"/>
                         <outlet property="yourGold" destination="wR6-ne-V9U" id="AsX-7h-uA7"/>
                         <outlet property="yourTurn" destination="PGu-Yx-Lrk" id="YOx-fZ-vSW"/>
                         <outletCollection property="raiseButtons" destination="btG-Zo-9EN" collectionClass="NSMutableArray" id="G8l-sb-Y5t"/>

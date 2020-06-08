@@ -54,4 +54,21 @@ struct Game {
         cardInPlay = deck.randomCard()
         currentPot = 0
     }
+    
+    mutating func reset() {
+        for num in 1...numOfPlayersValue {
+            let newHand = deck.startingHand()
+            if num == 1 {
+                personPlayer.cardsInHand = newHand            }
+            else if num == 2 {
+                cpu1.cardsInHand = newHand
+            }
+            else if num == 3 {
+                cpu2.cardsInHand = newHand
+            }
+            else if num == 4 {
+                cpu3.cardsInHand = newHand
+            }
+        }
+    }
 }

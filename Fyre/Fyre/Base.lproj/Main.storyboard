@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="six-j1-PK4">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="six-j1-PK4">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -268,7 +268,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="402" height="130"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ERY-ku-JGp">
-                                                <rect key="frame" x="0.0" y="0.0" width="86.5" height="130"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86.666666666666671" height="130"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="130" id="RDc-Lf-F0G"/>
@@ -279,7 +279,7 @@
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r46-gZ-3hZ">
-                                                <rect key="frame" x="104.5" y="0.0" width="86.5" height="130"/>
+                                                <rect key="frame" x="104.66666666666666" y="0.0" width="86.666666666666657" height="130"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="r46-gZ-3hZ" secondAttribute="height" multiplier="2:3" id="2c8-WP-Ohs"/>
@@ -290,7 +290,7 @@
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sxE-pV-Eap">
-                                                <rect key="frame" x="209" y="0.0" width="86.5" height="130"/>
+                                                <rect key="frame" x="209" y="0.0" width="86.666666666666686" height="130"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="sxE-pV-Eap" secondAttribute="height" multiplier="2:3" id="Cnv-yj-W5r"/>
@@ -301,7 +301,7 @@
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sWo-xL-xLb">
-                                                <rect key="frame" x="313.5" y="0.0" width="88.5" height="130"/>
+                                                <rect key="frame" x="313.66666666666669" y="0.0" width="88.333333333333314" height="130"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="sWo-xL-xLb" secondAttribute="height" multiplier="17:25" id="3s3-80-gUu"/>
@@ -317,7 +317,7 @@
                                         <rect key="frame" x="0.0" y="130" width="402" height="130"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rm5-wq-1St">
-                                                <rect key="frame" x="0.0" y="0.0" width="86.5" height="130"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86.666666666666671" height="130"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Rm5-wq-1St" secondAttribute="height" multiplier="2:3" id="hDo-2q-X7Y"/>
@@ -328,7 +328,7 @@
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bvh-4i-eQ5">
-                                                <rect key="frame" x="105" y="0.0" width="87" height="130"/>
+                                                <rect key="frame" x="105" y="0.0" width="86.666666666666686" height="130"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="86.670000000000002" id="6Jl-1B-SRI"/>
@@ -339,7 +339,7 @@
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G5D-J5-5Lh">
-                                                <rect key="frame" x="210" y="0.0" width="87" height="130"/>
+                                                <rect key="frame" x="210.33333333333334" y="0.0" width="86.666666666666657" height="130"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="86.670000000000002" id="Om8-BQ-Plr"/>
@@ -350,7 +350,7 @@
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FKa-gf-0Ox">
-                                                <rect key="frame" x="315.5" y="0.0" width="86.5" height="130"/>
+                                                <rect key="frame" x="315.33333333333331" y="0.0" width="86.666666666666686" height="130"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="FKa-gf-0Ox" secondAttribute="height" multiplier="2:3" id="Blt-7Q-Yde"/>
@@ -477,10 +477,10 @@
                         <outlet property="card6" destination="Bvh-4i-eQ5" id="Xlf-Uw-iKu"/>
                         <outlet property="card7" destination="G5D-J5-5Lh" id="7By-Nu-OGR"/>
                         <outlet property="card8" destination="FKa-gf-0Ox" id="I11-Zc-0kv"/>
-                        <outlet property="cpu1Cards" destination="KVQ-i1-XyE" id="jVB-5y-L3I"/>
-                        <outlet property="cpu1Gold" destination="CEs-2m-IqI" id="BT4-tC-aWQ"/>
-                        <outlet property="cpu2Cards" destination="Df3-Ec-h7G" id="iKf-69-Asv"/>
-                        <outlet property="cpu2Gold" destination="tg9-ns-juS" id="BNU-Mw-zHB"/>
+                        <outlet property="cpu1Cards" destination="Df3-Ec-h7G" id="0e8-ql-UI2"/>
+                        <outlet property="cpu1Gold" destination="tg9-ns-juS" id="RJS-m7-pkH"/>
+                        <outlet property="cpu2Cards" destination="KVQ-i1-XyE" id="RJb-2w-dY3"/>
+                        <outlet property="cpu2Gold" destination="CEs-2m-IqI" id="jRE-Wb-glf"/>
                         <outlet property="cpu3Cards" destination="71M-5Y-XVQ" id="2L0-Nj-6jh"/>
                         <outlet property="cpu3Gold" destination="lqy-A0-B86" id="tV2-1S-EXx"/>
                         <outlet property="currentCard" destination="Ne0-kc-gvv" id="k8S-El-58i"/>

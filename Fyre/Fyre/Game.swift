@@ -56,6 +56,19 @@ struct Game {
     }
     
     mutating func reset() {
+        for _ in 0...deck.deck.count - 1 {
+            deck.deck.remove(at: 0)
+        }
+        
+        let suits = ["H", "C", "S", "D"]
+        for number in 1...13 {
+            for s in suits {
+                let card = Card(cardNum: number, cardType: s, cardName: (String(number) + s))
+                deck.deck.append(card)
+            }
+        }
+        deck.cardCount = 52
+        
         for num in 1...numOfPlayersValue {
             let newHand = deck.startingHand()
             if num == 1 {

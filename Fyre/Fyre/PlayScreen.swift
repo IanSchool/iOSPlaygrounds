@@ -138,7 +138,9 @@ class PlayScreen: UIViewController {
             numPlayersFolded += 1
             updateUI()
         }
-        cpuRaising()
+        if numPlayersFolded + 1 != game!.numOfPlayersValue {
+            cpuRaising()
+        }
         raiseActual.isEnabled = false
         foldButton.isEnabled = false
     }
@@ -209,7 +211,12 @@ class PlayScreen: UIViewController {
     
     func cpuRaising() {
         if raisedAmount == 0 || playerFold {
-            raisedAmount = game!.cpu1.goldRemaining / 4
+            if !cpu1Fold {
+                raisedAmount = game!.cpu1.goldRemaining / 4
+            }
+            else {
+                raisedAmount = game!.cpu2.goldRemaining / 4
+            }
         }
         
         if !cpu1Fold && game!.cpu1.goldRemaining >= raisedAmount {
@@ -230,9 +237,11 @@ class PlayScreen: UIViewController {
             }
         }
         else {
-            game!.cpu1.fold()
-            cpu1Fold = true
-            numPlayersFolded += 1
+            if !cpu1Fold {
+                game!.cpu1.fold()
+                cpu1Fold = true
+                numPlayersFolded += 1
+            }
         }
         
         if game!.numOfPlayersValue > 3 {
@@ -254,9 +263,11 @@ class PlayScreen: UIViewController {
                 }
             }
             else {
-                game!.cpu2.fold()
-                cpu2Fold = true
-                numPlayersFolded += 1
+                if !cpu2Fold {
+                    game!.cpu2.fold()
+                    cpu2Fold = true
+                    numPlayersFolded += 1
+                }
             }
             
             if !cpu3Fold && game!.cpu3.goldRemaining >= raisedAmount {
@@ -277,9 +288,11 @@ class PlayScreen: UIViewController {
                 }
             }
             else {
-                game!.cpu3.fold()
-                cpu3Fold = true
-                numPlayersFolded += 1
+                if !cpu3Fold {
+                    game!.cpu3.fold()
+                    cpu3Fold = true
+                    numPlayersFolded += 1
+                }
             }
         }
         else if game!.numOfPlayersValue > 2 {
@@ -301,9 +314,11 @@ class PlayScreen: UIViewController {
                 }
             }
             else {
-                game!.cpu2.fold()
-                cpu2Fold = true
-                numPlayersFolded += 1
+                if !cpu2Fold {
+                    game!.cpu2.fold()
+                    cpu2Fold = true
+                    numPlayersFolded += 1
+                }
             }
         }
     }
@@ -311,6 +326,77 @@ class PlayScreen: UIViewController {
     @IBAction func nextTurn(_ sender: Any) {
         nextTurnButton.setTitle("Next Turn", for: .normal)
         turnNum += 1
+        
+        if winner() {
+            if numPlayersFolded + 1 == game!.numOfPlayersValue {
+                if game!.numOfPlayersValue == 2 {
+                    if playerFold {
+                        game!.cpu1.goldRemaining += game!.currentPot
+                        game!.currentPot = 0
+                    }
+                    else {
+                        game!.personPlayer.goldRemaining += game!.currentPot
+                        game!.currentPot = 0
+                    }
+                }
+                else if game!.numOfPlayersValue == 3 {
+                    if playerFold && cpu1Fold {
+                        game!.cpu2.goldRemaining += game!.currentPot
+                        game!.currentPot = 0
+                    }
+                    else if playerFold && cpu2Fold {
+                        game!.cpu1.goldRemaining += game!.currentPot
+                        game!.currentPot = 0
+                    }
+                    else {
+                        game!.personPlayer.goldRemaining += game!.currentPot
+                        game!.currentPot = 0
+                    }
+                }
+                else if game!.numOfPlayersValue == 4 {
+                    if playerFold && cpu2Fold && cpu3Fold {
+                        game!.cpu1.goldRemaining += game!.currentPot
+                        game!.currentPot = 0
+                    }
+                    else if playerFold && cpu1Fold && cpu3Fold{
+                        game!.cpu2.goldRemaining += game!.currentPot
+                        game!.currentPot = 0
+                    }
+                    else if playerFold && cpu1Fold && cpu2Fold{
+                        game!.cpu3.goldRemaining += game!.currentPot
+                        game!.currentPot = 0
+                    }
+                    else {
+                        game!.personPlayer.goldRemaining += game!.currentPot
+                        game!.currentPot = 0
+                    }
+                }
+            }
+            else if game!.personPlayer.cardsInHand.count == 0 && !playerFold {
+                game!.personPlayer.goldRemaining += game!.currentPot
+                game!.currentPot = 0
+            }
+            else if game!.cpu1.cardsInHand.count == 0 && !cpu1Fold {
+                game!.cpu1.goldRemaining += game!.currentPot
+                game!.currentPot = 0
+            }
+            else if game!.cpu2.cardsInHand.count == 0 && !cpu2Fold && game!.numOfPlayersValue > 2 {
+                game!.cpu2.goldRemaining += game!.currentPot
+                game!.currentPot = 0
+            }
+            else if game!.cpu3.cardsInHand.count == 0 && !cpu3Fold && game!.numOfPlayersValue > 3 {
+                game!.cpu3.goldRemaining += game!.currentPot
+                game!.currentPot = 0
+            }
+            
+            turnNum = 0
+            playerFold = false
+            cpu1Fold = false
+            cpu2Fold = false
+            cpu3Fold = false
+            numPlayersFolded = 0
+            game!.reset()
+        }
         
         if turnNum > game!.numOfPlayersValue {
             turnNum = 1
@@ -389,77 +475,6 @@ class PlayScreen: UIViewController {
                 }
                 yourTurn.text = ""
             }
-        }
-        
-        if winner() {
-            if numPlayersFolded + 1 == game!.numOfPlayersValue {
-                if game!.numOfPlayersValue == 2 {
-                    if playerFold {
-                        game!.cpu1.goldRemaining += game!.currentPot
-                        game!.currentPot = 0
-                    }
-                    else {
-                        game!.personPlayer.goldRemaining += game!.currentPot
-                        game!.currentPot = 0
-                    }
-                }
-                else if game!.numOfPlayersValue == 3 {
-                    if playerFold && cpu1Fold {
-                        game!.cpu2.goldRemaining += game!.currentPot
-                        game!.currentPot = 0
-                    }
-                    else if playerFold && cpu2Fold {
-                        game!.cpu1.goldRemaining += game!.currentPot
-                        game!.currentPot = 0
-                    }
-                    else {
-                        game!.personPlayer.goldRemaining += game!.currentPot
-                        game!.currentPot = 0
-                    }
-                }
-                else if game!.numOfPlayersValue == 4 {
-                    if playerFold && cpu2Fold && cpu3Fold {
-                        game!.cpu1.goldRemaining += game!.currentPot
-                        game!.currentPot = 0
-                    }
-                    else if playerFold && cpu1Fold && cpu3Fold{
-                        game!.cpu2.goldRemaining += game!.currentPot
-                        game!.currentPot = 0
-                    }
-                    else if playerFold && cpu1Fold && cpu2Fold{
-                        game!.cpu3.goldRemaining += game!.currentPot
-                        game!.currentPot = 0
-                    }
-                    else {
-                        game!.personPlayer.goldRemaining += game!.currentPot
-                        game!.currentPot = 0
-                    }
-                }
-            }
-            else if game!.personPlayer.cardsInHand.count == 0 && !playerFold {
-                game!.personPlayer.goldRemaining += game!.currentPot
-                game!.currentPot = 0
-            }
-            else if game!.cpu1.cardsInHand.count == 0 && !cpu1Fold {
-                game!.cpu1.goldRemaining += game!.currentPot
-                game!.currentPot = 0
-            }
-            else if game!.cpu2.cardsInHand.count == 0 && !cpu2Fold && game!.numOfPlayersValue > 2 {
-                game!.cpu2.goldRemaining += game!.currentPot
-                game!.currentPot = 0
-            }
-            else if game!.cpu3.cardsInHand.count == 0 && !cpu3Fold && game!.numOfPlayersValue > 3 {
-                game!.cpu3.goldRemaining += game!.currentPot
-                game!.currentPot = 0
-            }
-            
-            turnNum = 1
-            playerFold = false
-            cpu1Fold = false
-            cpu2Fold = false
-            cpu3Fold = false
-            numPlayersFolded = 0
-            game!.reset()
         }
         
         updateUI()

@@ -34,6 +34,7 @@ class PlayScreen: UIViewController {
     @IBOutlet weak var nextTurnButton: UIButton!
     
     var game: Game?
+    var deck: Deck?
     var turnNum = 0
     let suits = ["H", "C", "S", "D"]
     var cardPlayedName: String = ""
@@ -55,6 +56,8 @@ class PlayScreen: UIViewController {
             if cardPlayable(card: game!.personPlayer.cardsInHand[0]) {
                 game!.cardInPlay = game!.personPlayer.cardsInHand[0]
                 game!.personPlayer.cardsInHand.remove(at: 0)
+                specialCardsPlayer()
+                nextTurnButton.isEnabled = true
                 updateUI()
             }
         }
@@ -65,6 +68,8 @@ class PlayScreen: UIViewController {
             if cardPlayable(card: game!.personPlayer.cardsInHand[1]) {
                 game!.cardInPlay = game!.personPlayer.cardsInHand[1]
                 game!.personPlayer.cardsInHand.remove(at: 1)
+                specialCardsPlayer()
+                nextTurnButton.isEnabled = true
                 updateUI()
             }
         }
@@ -75,6 +80,8 @@ class PlayScreen: UIViewController {
             if cardPlayable(card: game!.personPlayer.cardsInHand[2]) {
                 game!.cardInPlay = game!.personPlayer.cardsInHand[2]
                 game!.personPlayer.cardsInHand.remove(at: 2)
+                specialCardsPlayer()
+                nextTurnButton.isEnabled = true
                 updateUI()
             }
         }
@@ -85,6 +92,8 @@ class PlayScreen: UIViewController {
             if cardPlayable(card: game!.personPlayer.cardsInHand[3]) {
                 game!.cardInPlay = game!.personPlayer.cardsInHand[3]
                 game!.personPlayer.cardsInHand.remove(at: 3)
+                specialCardsPlayer()
+                nextTurnButton.isEnabled = true
                 updateUI()
             }
         }
@@ -95,6 +104,8 @@ class PlayScreen: UIViewController {
             if cardPlayable(card: game!.personPlayer.cardsInHand[4]) {
                 game!.cardInPlay = game!.personPlayer.cardsInHand[4]
                 game!.personPlayer.cardsInHand.remove(at: 4)
+                specialCardsPlayer()
+                nextTurnButton.isEnabled = true
                 updateUI()
             }
         }
@@ -105,6 +116,8 @@ class PlayScreen: UIViewController {
             if cardPlayable(card: game!.personPlayer.cardsInHand[5]) {
                 game!.cardInPlay = game!.personPlayer.cardsInHand[5]
                 game!.personPlayer.cardsInHand.remove(at: 5)
+                specialCardsPlayer()
+                nextTurnButton.isEnabled = true
                 updateUI()
             }
         }
@@ -115,6 +128,8 @@ class PlayScreen: UIViewController {
             if cardPlayable(card: game!.personPlayer.cardsInHand[6]) {
                 game!.cardInPlay = game!.personPlayer.cardsInHand[6]
                 game!.personPlayer.cardsInHand.remove(at: 6)
+                specialCardsPlayer()
+                nextTurnButton.isEnabled = true
                 updateUI()
             }
         }
@@ -125,24 +140,29 @@ class PlayScreen: UIViewController {
             if cardPlayable(card: game!.personPlayer.cardsInHand[7]) {
                 game!.cardInPlay = game!.personPlayer.cardsInHand[7]
                 game!.personPlayer.cardsInHand.remove(at: 7)
+                specialCardsPlayer()
+                nextTurnButton.isEnabled = true
                 updateUI()
             }
         }
     }
     
     @IBAction func fold(_ sender: Any) {
-        if playerTurn {
+        if playerTurn && !playerFold{
             game!.personPlayer.fold()
             playerFold = true
             playerTurn = false
             numPlayersFolded += 1
+            
+            if numPlayersFolded + 1 != game!.numOfPlayersValue {
+                cpuRaising()
+            }
+            
+            raiseActual.isEnabled = false
+            foldButton.isEnabled = false
+            nextTurnButton.isEnabled = true
             updateUI()
         }
-        if numPlayersFolded + 1 != game!.numOfPlayersValue {
-            cpuRaising()
-        }
-        raiseActual.isEnabled = false
-        foldButton.isEnabled = false
     }
     
     @IBAction func raise(_ sender: Any) {
@@ -324,6 +344,10 @@ class PlayScreen: UIViewController {
     }
     
     @IBAction func nextTurn(_ sender: Any) {
+        nextTurnAction()
+    }
+    
+    func nextTurnAction() {
         nextTurnButton.setTitle("Next Turn", for: .normal)
         turnNum += 1
         
@@ -396,28 +420,71 @@ class PlayScreen: UIViewController {
             cpu3Fold = false
             numPlayersFolded = 0
             game!.reset()
+            nextTurnButton.setTitle("Start Round", for: .normal)
         }
         
         if turnNum > game!.numOfPlayersValue {
             turnNum = 1
         }
         
-        if turnNum == 1 {
+        if turnNum == 0 {
+            if !playerFold {
+                game!.personPlayer.goldRemaining -= 1
+                game!.currentPot += 1
+            }
+            if !cpu1Fold {
+                game!.cpu1.goldRemaining -= 1
+                game!.currentPot += 1
+            }
+            if !cpu2Fold && game!.numOfPlayersValue > 2{
+                game!.cpu2.goldRemaining -= 1
+                game!.currentPot += 1
+            }
+            if !cpu3Fold && game!.numOfPlayersValue > 3{
+                game!.cpu3.goldRemaining -= 1
+                game!.currentPot += 1
+            }
+        }
+        else if turnNum == 1 {
             if !playerFold {
                 raiseActual.isEnabled = true
                 foldButton.isEnabled = true
                 playerTurn = true
                 yourTurn.text = "It is your turn"
+                nextTurnButton.isEnabled = false
+            }
+            else {
+                nextTurnAction()
             }
         }
         else if turnNum == 2 {
             playerTurn = false
             var cpu1CardPlayed = false
-            if !cpu1Fold {
+            if !cpu1Fold && game!.cpu1.goldRemaining >= 0 {
                 for num in 0...game!.cpu1.cardsInHand.count - 1 {
                     if cardPlayable(card: game!.cpu1.cardsInHand[num]) {
                         game!.cardInPlay = game!.cpu1.cardsInHand[num]
                         game!.cpu1.cardsInHand.remove(at: num)
+                        if game!.cardInPlay.cardNum == 11 {
+                            turnNum += 1
+                        }
+                        else if game!.cardInPlay.cardNum == 12 {
+                            if !playerFold {
+                                game!.cpu2.goldRemaining -= 1
+                                game!.currentPot += 1
+                            }
+                            if !cpu2Fold && game!.numOfPlayersValue > 2{
+                                game!.cpu2.goldRemaining -= 1
+                                game!.currentPot += 1
+                            }
+                            if !cpu3Fold && game!.numOfPlayersValue > 3{
+                                game!.cpu3.goldRemaining -= 1
+                                game!.currentPot += 1
+                            }
+                        }
+                        else if game!.cardInPlay.cardNum == 13 {
+                            game!.cpu1.goldRemaining += 1
+                        }
                         updateUI()
                         cpu1CardPlayed = true
                         break
@@ -431,15 +498,39 @@ class PlayScreen: UIViewController {
                 }
                 yourTurn.text = ""
             }
+            else {
+                nextTurnAction()
+            }
         }
         else if turnNum == 3 {
             playerTurn = false
             var cpu2CardPlayed = false
-            if !cpu2Fold {
+            if !cpu2Fold && game!.cpu2.goldRemaining >= 0 {
                 for num in 0...game!.cpu2.cardsInHand.count - 1 {
                     if cardPlayable(card: game!.cpu2.cardsInHand[num]) {
                         game!.cardInPlay = game!.cpu2.cardsInHand[num]
                         game!.cpu2.cardsInHand.remove(at: num)
+                        
+                        if game!.cardInPlay.cardNum == 11 {
+                            turnNum += 1
+                        }
+                        else if game!.cardInPlay.cardNum == 12 {
+                            if !cpu1Fold {
+                                game!.cpu1.goldRemaining -= 1
+                                game!.currentPot += 1
+                            }
+                            if !cpu3Fold && game!.numOfPlayersValue > 3 {
+                                game!.cpu3.goldRemaining -= 1
+                                game!.currentPot += 1
+                            }
+                            if !playerFold {
+                                game!.personPlayer.goldRemaining -= 1
+                                game!.currentPot += 1
+                            }
+                        }
+                        else if game!.cardInPlay.cardNum == 13 {
+                            game!.cpu2.goldRemaining += 1
+                        }
                         updateUI()
                         cpu2CardPlayed = true
                         break
@@ -453,15 +544,38 @@ class PlayScreen: UIViewController {
                 }
                 yourTurn.text = ""
             }
+            else {
+                nextTurnAction()
+            }
         }
         else if turnNum == 4 {
             playerTurn = false
             var cpu3CardPlayed = false
-            if !cpu3Fold {
+            if !cpu3Fold && game!.cpu3.goldRemaining >= 0 {
                 for num in 0...game!.cpu3.cardsInHand.count - 1 {
                     if cardPlayable(card: game!.cpu3.cardsInHand[num]) {
                         game!.cardInPlay = game!.cpu3.cardsInHand[num]
                         game!.cpu3.cardsInHand.remove(at: num)
+                        if game!.cardInPlay.cardNum == 11 {
+                            turnNum += 1
+                        }
+                        else if game!.cardInPlay.cardNum == 12 {
+                            if !cpu1Fold {
+                                game!.cpu1.goldRemaining -= 1
+                                game!.currentPot += 1
+                            }
+                            if !cpu2Fold {
+                                game!.cpu2.goldRemaining -= 1
+                                game!.currentPot += 1
+                            }
+                            if !playerFold{
+                                game!.personPlayer.goldRemaining -= 1
+                                game!.currentPot += 1
+                            }
+                        }
+                        else if game!.cardInPlay.cardNum == 13 {
+                            game!.personPlayer.goldRemaining += 1
+                        }
                         updateUI()
                         cpu3CardPlayed = true
                         break
@@ -474,6 +588,9 @@ class PlayScreen: UIViewController {
                     numPlayersFolded += 1
                 }
                 yourTurn.text = ""
+            }
+            else {
+                nextTurnAction()
             }
         }
         
@@ -520,7 +637,7 @@ class PlayScreen: UIViewController {
         
         yourGold.text = "Your Gold: \(game!.personPlayer.goldRemaining)"
         let playerCardCount = game!.personPlayer.cardsInHand.count
-        if !playerFold {
+        if !playerFold && playerCardCount != 0{
             for num in 1...playerCardCount {
                 if num == 1 {
                     card1.image = UIImage(named: game!.personPlayer.cardsInHand[0].cardName)
@@ -549,6 +666,31 @@ class PlayScreen: UIViewController {
             }
         }        
         currentPot.text = "Current Pot: \(game!.currentPot)"
+        
+        if game!.numOfPlayersValue == 2 {
+            if game!.personPlayer.goldRemaining < 0 {
+                yourTurn.text = "You Lose"
+            }
+            else if game!.cpu1.goldRemaining < 0 {
+                yourTurn.text = "You Win"
+            }
+        }
+        else if game!.numOfPlayersValue == 3 {
+            if game!.personPlayer.goldRemaining < 0 {
+                yourTurn.text = "You Lose"
+            }
+            else if game!.cpu1.goldRemaining < 0 && game!.cpu2.goldRemaining < 0 {
+                yourTurn.text = "You Win"
+            }
+        }
+        else if game!.numOfPlayersValue == 4 {
+            if game!.personPlayer.goldRemaining < 0 {
+                yourTurn.text = "You Lose"
+            }
+            else if game!.cpu1.goldRemaining < 0 && game!.cpu2.goldRemaining < 0 && game!.cpu3.goldRemaining < 0{
+                yourTurn.text = "You Win"
+            }
+        }
     }
     
     func cardPlayable(card: Card) -> Bool {
@@ -578,5 +720,28 @@ class PlayScreen: UIViewController {
             return true
         }
         return false
+    }
+    
+    func specialCardsPlayer() {
+        if game!.cardInPlay.cardNum == 11 {
+            turnNum += 1
+        }
+        else if game!.cardInPlay.cardNum == 12 {
+            if !cpu1Fold {
+                game!.cpu1.goldRemaining -= 1
+                game!.currentPot += 1
+            }
+            if !cpu2Fold && game!.numOfPlayersValue > 2{
+                game!.cpu2.goldRemaining -= 1
+                game!.currentPot += 1
+            }
+            if !cpu3Fold && game!.numOfPlayersValue > 3{
+                game!.cpu3.goldRemaining -= 1
+                game!.currentPot += 1
+            }
+        }
+        else if game!.cardInPlay.cardNum == 13 {
+            game!.personPlayer.goldRemaining += 1
+        }
     }
 }

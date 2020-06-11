@@ -57,24 +57,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvS-1O-3nd">
-                                <rect key="frame" x="147" y="603" width="123" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Card Glossary"/>
-                                <connections>
-                                    <segue destination="HYd-EQ-YWc" kind="show" id="cgj-t3-Fwl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOL-ul-hXk">
-                                <rect key="frame" x="184" y="684" width="48" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Rules"/>
-                                <connections>
-                                    <segue destination="r8F-8G-hKM" kind="show" id="Xrt-ff-KAa"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sux-vj-POQ">
                                 <rect key="frame" x="159" y="513" width="99" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -91,6 +73,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOL-ul-hXk">
+                                <rect key="frame" x="184" y="628" width="48" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Rules"/>
+                                <connections>
+                                    <segue destination="r8F-8G-hKM" kind="show" id="Xrt-ff-KAa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -107,93 +98,6 @@
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="g2A-Bg-M9k">
-            <objects>
-                <viewController id="HYd-EQ-YWc" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="d03-LA-9VO" customClass="GlossaryScreen">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="td0-Ei-OOe">
-                                <rect key="frame" x="20" y="169" width="110" height="6546"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Arj-G2-47Q">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="2112"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AS" translatesAutoresizingMaskIntoConstraints="NO" id="3aJ-x1-Qqq">
-                                                <rect key="frame" x="0.0" y="0.0" width="55" height="2112"/>
-                                            </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="This card makes the next player draw one card" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3rw-Gr-M73">
-                                                <rect key="frame" x="55" y="0.0" width="55" height="2112"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWn-eg-AgC">
-                                        <rect key="frame" x="0.0" y="2112" width="110" height="2112"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JS" translatesAutoresizingMaskIntoConstraints="NO" id="rUV-es-cK2">
-                                                <rect key="frame" x="0.0" y="0.0" width="110" height="2112"/>
-                                            </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="This card skips your next opponet" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="onE-Rg-RWH">
-                                                <rect key="frame" x="110" y="0.0" width="0.0" height="2112"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASf-H2-Va7">
-                                        <rect key="frame" x="0.0" y="4224" width="110" height="210"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QS" translatesAutoresizingMaskIntoConstraints="NO" id="19U-ON-K1X">
-                                                <rect key="frame" x="0.0" y="0.0" width="110" height="210"/>
-                                            </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="This card lets you discard one card then draw one card" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Llp-W4-64h">
-                                                <rect key="frame" x="110" y="0.0" width="0.0" height="210"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="210" id="2t4-b1-9wH"/>
-                                            <constraint firstAttribute="width" constant="110" id="UWW-2m-PMi"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tlg-nV-7LR">
-                                        <rect key="frame" x="0.0" y="4434" width="110" height="2112"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KS" translatesAutoresizingMaskIntoConstraints="NO" id="E4C-QY-jNc">
-                                                <rect key="frame" x="0.0" y="0.0" width="110" height="2112"/>
-                                            </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="This card lets you swap hands with an opponet" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9kc-un-yS6">
-                                                <rect key="frame" x="110" y="0.0" width="0.0" height="2112"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="xJP-Dw-IsR"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="hh4-18-hPV"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CGp-g1-FaV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="138" y="852"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="SiZ-Dz-RxX">
             <objects>
                 <viewController id="r8F-8G-hKM" sceneMemberID="viewController">
@@ -201,24 +105,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1lv-17-sxR">
-                                <rect key="frame" x="54" y="239" width="307" height="507.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1lv-17-sxR">
+                                <rect key="frame" x="10" y="98" width="394" height="754"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">- Each player starts with a set amount of gold at the beggining of the game, then at the start of the game everyone draws four cards                                                   - Then after that every player makes an intial bet based or folds(they quit the round)                                            - Once every player has made their intial bet the first playing round will begin.                                                      - Each player, starting with player one and moving in a circle from there, plays one card                                                         - After everyone has played one card you can either fold, raise, or stay                                                      - This continues until only one player has money left</string>
+                                <mutableString key="text">Each player starts with a set amount of gold at the beggining of the game, then at the start of the game everyone draws four cards. Then after that every player makes an intial bet based or folds(they quit the round). Once every player has made their intial bet the first playing round will begin. You will always bet at least one gold. Each player, starting with player one and moving in a circle from there, plays one card. After everyone has played one card you can either fold, raise, or stay. The round will reset once everyone except one player has folded or once a player has played all their cards. This continues until only one player has money left. The Special Cards are the King, Queen, and Jack. When a Jack is played it skips the next player. When a Queen is played it makes everyone else add another gold to the pot. A king gives you a gold</mutableString>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tc4-he-xvu" firstAttribute="bottom" secondItem="1lv-17-sxR" secondAttribute="bottom" constant="10" id="dts-z2-wBj"/>
+                            <constraint firstItem="1lv-17-sxR" firstAttribute="leading" secondItem="tc4-he-xvu" secondAttribute="leading" constant="10" id="ghB-zY-oOD"/>
+                            <constraint firstItem="tc4-he-xvu" firstAttribute="trailing" secondItem="1lv-17-sxR" secondAttribute="trailing" constant="10" id="uPY-ek-rFV"/>
+                            <constraint firstItem="1lv-17-sxR" firstAttribute="top" secondItem="tc4-he-xvu" secondAttribute="top" constant="10" id="x6H-uK-wJy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tc4-he-xvu"/>
                     </view>
                     <navigationItem key="navigationItem" id="a3P-Hj-EBa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uc9-sg-ElQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1011.5942028985507" y="851.78571428571422"/>
+            <point key="canvasLocation" x="138" y="880"/>
         </scene>
         <!--Play Screen-->
         <scene sceneID="NgV-RU-e18">
@@ -234,21 +143,14 @@
                                 <gestureRecognizers/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gold:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tg9-ns-juS">
-                                <rect key="frame" x="314" y="361" width="86" height="21"/>
+                                <rect key="frame" x="314" y="361.33333333333337" width="86" height="20.333333333333314"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cards:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71M-5Y-XVQ">
-                                <rect key="frame" x="20" y="320" width="78" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gold:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqy-A0-B86">
-                                <rect key="frame" x="20" y="361" width="101" height="21"/>
+                                <rect key="frame" x="20" y="320" width="78" height="20.666666666666686"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -261,51 +163,55 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nZU-iR-weD">
-                                <rect key="frame" x="6" y="596" width="402" height="260"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nZU-iR-weD">
+                                <rect key="frame" x="6" y="597" width="394" height="260"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="iiq-WU-Mp8">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="130"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="iiq-WU-Mp8">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="130"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ERY-ku-JGp">
-                                                <rect key="frame" x="0.0" y="0.0" width="86.666666666666671" height="130"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="130"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="130" id="RDc-Lf-F0G"/>
-                                                    <constraint firstAttribute="width" secondItem="ERY-ku-JGp" secondAttribute="height" multiplier="2:3" id="cUy-FY-82x"/>
+                                                    <constraint firstAttribute="height" constant="130" id="aIr-vf-0Yi"/>
+                                                    <constraint firstAttribute="width" secondItem="ERY-ku-JGp" secondAttribute="height" multiplier="43:65" id="i9P-NH-q3j"/>
+                                                    <constraint firstAttribute="width" constant="86.670000000000002" id="lwf-KJ-hor"/>
                                                 </constraints>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="9CA-FI-QvH" appends="YES" id="dV1-DD-R7s"/>
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r46-gZ-3hZ">
-                                                <rect key="frame" x="104.66666666666666" y="0.0" width="86.666666666666657" height="130"/>
+                                                <rect key="frame" x="102" y="0.0" width="86" height="130"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="r46-gZ-3hZ" secondAttribute="height" multiplier="2:3" id="2c8-WP-Ohs"/>
-                                                    <constraint firstAttribute="width" constant="86.670000000000002" id="lt1-ad-ghG"/>
+                                                    <constraint firstAttribute="height" constant="130" id="TbR-mK-mLq"/>
+                                                    <constraint firstAttribute="width" secondItem="r46-gZ-3hZ" secondAttribute="height" multiplier="43:65" id="oB2-0b-rdd"/>
+                                                    <constraint firstAttribute="width" constant="86.670000000000002" id="ojx-2U-iSF"/>
                                                 </constraints>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="CFw-1n-bIh" appends="YES" id="oUv-tE-FSD"/>
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sxE-pV-Eap">
-                                                <rect key="frame" x="209" y="0.0" width="86.666666666666686" height="130"/>
+                                                <rect key="frame" x="204" y="0.0" width="86" height="130"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="sxE-pV-Eap" secondAttribute="height" multiplier="2:3" id="Cnv-yj-W5r"/>
-                                                    <constraint firstAttribute="width" constant="86.670000000000002" id="QEB-4A-1vp"/>
+                                                    <constraint firstAttribute="width" secondItem="sxE-pV-Eap" secondAttribute="height" multiplier="43:65" id="Sc1-rC-6JY"/>
+                                                    <constraint firstAttribute="width" constant="86.670000000000002" id="iK5-EI-H9p"/>
+                                                    <constraint firstAttribute="height" constant="130" id="kMl-Qu-vud"/>
                                                 </constraints>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="zLX-BY-x6w" appends="YES" id="ftd-rJ-hUl"/>
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sWo-xL-xLb">
-                                                <rect key="frame" x="313.66666666666669" y="0.0" width="88.333333333333314" height="130"/>
+                                                <rect key="frame" x="306" y="0.0" width="88" height="130"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="sWo-xL-xLb" secondAttribute="height" multiplier="17:25" id="3s3-80-gUu"/>
-                                                    <constraint firstAttribute="width" constant="86.670000000000002" id="6cF-mA-lbM"/>
+                                                    <constraint firstAttribute="width" secondItem="sWo-xL-xLb" secondAttribute="height" multiplier="44:65" id="ZIr-4r-bL3"/>
+                                                    <constraint firstAttribute="height" constant="130" id="h7d-el-VPI"/>
+                                                    <constraint firstAttribute="width" constant="88" id="oUm-5x-3rV"/>
                                                 </constraints>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="FES-8W-ktg" appends="YES" id="k0R-kB-6zh"/>
@@ -314,47 +220,51 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="hqI-Yd-ecF">
-                                        <rect key="frame" x="0.0" y="130" width="402" height="130"/>
+                                        <rect key="frame" x="0.0" y="130" width="394" height="130"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rm5-wq-1St">
-                                                <rect key="frame" x="0.0" y="0.0" width="86.666666666666671" height="130"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="130"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Rm5-wq-1St" secondAttribute="height" multiplier="2:3" id="hDo-2q-X7Y"/>
-                                                    <constraint firstAttribute="width" constant="86.670000000000002" id="lld-3U-Iys"/>
+                                                    <constraint firstAttribute="width" constant="86.670000000000002" id="2tZ-FE-tDY"/>
+                                                    <constraint firstAttribute="height" constant="130" id="3pA-9I-07q"/>
+                                                    <constraint firstAttribute="width" secondItem="Rm5-wq-1St" secondAttribute="height" multiplier="43:65" id="Bo0-NH-D8T"/>
                                                 </constraints>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="g0Z-hv-0yL" appends="YES" id="cke-eX-aih"/>
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bvh-4i-eQ5">
-                                                <rect key="frame" x="105" y="0.0" width="86.666666666666686" height="130"/>
+                                                <rect key="frame" x="102.33333333333331" y="0.0" width="86" height="130"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="86.670000000000002" id="6Jl-1B-SRI"/>
-                                                    <constraint firstAttribute="width" secondItem="Bvh-4i-eQ5" secondAttribute="height" multiplier="2:3" id="YEl-1l-dKL"/>
+                                                    <constraint firstAttribute="height" constant="130" id="JPD-OZ-wZg"/>
+                                                    <constraint firstAttribute="width" secondItem="Bvh-4i-eQ5" secondAttribute="height" multiplier="43:65" id="piQ-ES-qtK"/>
+                                                    <constraint firstAttribute="width" constant="86.670000000000002" id="yrs-jA-3zF"/>
                                                 </constraints>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="Nlt-XJ-Ggj" appends="YES" id="LaV-4B-41F"/>
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G5D-J5-5Lh">
-                                                <rect key="frame" x="210.33333333333334" y="0.0" width="86.666666666666657" height="130"/>
+                                                <rect key="frame" x="204.66666666666666" y="0.0" width="85.999999999999972" height="130"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="86.670000000000002" id="Om8-BQ-Plr"/>
-                                                    <constraint firstAttribute="width" secondItem="G5D-J5-5Lh" secondAttribute="height" multiplier="2:3" id="dss-8H-Rh7"/>
+                                                    <constraint firstAttribute="height" constant="130" id="3Gl-Rg-0iM"/>
+                                                    <constraint firstAttribute="width" constant="86.670000000000002" id="P6X-9t-4mr"/>
+                                                    <constraint firstAttribute="width" secondItem="G5D-J5-5Lh" secondAttribute="height" multiplier="43:65" id="tfV-4W-Rqz"/>
                                                 </constraints>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="JRb-fA-MaG" appends="YES" id="wIb-ML-Iqr"/>
                                                 </connections>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FKa-gf-0Ox">
-                                                <rect key="frame" x="315.33333333333331" y="0.0" width="86.666666666666686" height="130"/>
+                                                <rect key="frame" x="307" y="0.0" width="87" height="130"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="FKa-gf-0Ox" secondAttribute="height" multiplier="2:3" id="Blt-7Q-Yde"/>
-                                                    <constraint firstAttribute="height" constant="130" id="Hom-Ei-EOp"/>
+                                                    <constraint firstAttribute="width" constant="87" id="FsH-JB-Xlr"/>
+                                                    <constraint firstAttribute="height" constant="130" id="akQ-kX-V64"/>
+                                                    <constraint firstAttribute="width" secondItem="FKa-gf-0Ox" secondAttribute="height" multiplier="87:130" id="tZx-Hw-FSX"/>
                                                 </constraints>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="aSX-Ja-NOY" appends="YES" id="p5S-Qe-CJW"/>
@@ -372,14 +282,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cards:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df3-Ec-h7G">
-                                <rect key="frame" x="310" y="320" width="77" height="21"/>
+                                <rect key="frame" x="310" y="320" width="77" height="20.666666666666686"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDS-Ig-oxC">
-                                <rect key="frame" x="299" y="520" width="78" height="30"/>
+                                <rect key="frame" x="299" y="520" width="109" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start Game"/>
                                 <connections>
@@ -410,7 +320,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btG-Zo-9EN">
-                                <rect key="frame" x="167" y="472" width="30" height="30"/>
+                                <rect key="frame" x="167" y="471.66666666666669" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="1/4"/>
                                 <connections>
@@ -426,7 +336,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Lb-PB-V6N">
-                                <rect key="frame" x="314" y="472" width="46" height="30"/>
+                                <rect key="frame" x="314" y="471.66666666666669" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="ALL IN"/>
                                 <connections>
@@ -442,7 +352,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" _" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGu-Yx-Lrk">
-                                <rect key="frame" x="12" y="558" width="146" height="21"/>
+                                <rect key="frame" x="12" y="558" width="123" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -455,15 +365,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gold:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqy-A0-B86">
+                                <rect key="frame" x="20" y="360" width="97" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="iHV-uA-XrI" firstAttribute="trailing" secondItem="nZU-iR-weD" secondAttribute="trailing" constant="6" id="A6j-Vo-wvG"/>
-                            <constraint firstItem="iHV-uA-XrI" firstAttribute="trailing" secondItem="nZU-iR-weD" secondAttribute="trailing" constant="6" id="Sdj-fb-hKo"/>
-                            <constraint firstItem="iHV-uA-XrI" firstAttribute="bottom" secondItem="nZU-iR-weD" secondAttribute="bottom" constant="6" id="fna-4p-gsI"/>
-                            <constraint firstItem="nZU-iR-weD" firstAttribute="leading" secondItem="iHV-uA-XrI" secondAttribute="leading" constant="6" id="tHN-BL-VMg"/>
-                            <constraint firstItem="nZU-iR-weD" firstAttribute="leading" secondItem="iHV-uA-XrI" secondAttribute="leading" constant="6" id="tJV-Cx-OFK"/>
-                            <constraint firstItem="iHV-uA-XrI" firstAttribute="bottom" secondItem="nZU-iR-weD" secondAttribute="bottom" constant="6" id="vgN-dK-BfX"/>
+                            <constraint firstItem="iHV-uA-XrI" firstAttribute="bottom" secondItem="nZU-iR-weD" secondAttribute="bottom" constant="5" id="5bu-G4-qmo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iHV-uA-XrI"/>
                     </view>
@@ -541,10 +453,4 @@
             <point key="canvasLocation" x="1013.0434782608696" y="129.91071428571428"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="AS" width="691" height="1056"/>
-        <image name="JS" width="691" height="1056"/>
-        <image name="KS" width="691" height="1056"/>
-        <image name="QS" width="691" height="1056"/>
-    </resources>
 </document>

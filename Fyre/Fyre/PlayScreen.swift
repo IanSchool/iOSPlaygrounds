@@ -466,7 +466,29 @@ class PlayScreen: UIViewController {
                         game!.cardInPlay = game!.cpu1.cardsInHand[num]
                         game!.cpu1.cardsInHand.remove(at: num)
                         if game!.cardInPlay.cardNum == 11 {
-                            turnNum += 1
+                            if game!.numOfPlayersValue == 2 {
+                                turnNum += 1
+                            }
+                            else if game!.numOfPlayersValue == 3 {
+                                if !cpu2Fold {
+                                    turnNum += 1
+                                }
+                                else {
+                                    turnNum += 2
+                                }
+                            }
+                            else if game!.numOfPlayersValue == 4 {
+                                if !cpu2Fold {
+                                    turnNum += 1
+                                }
+                                else if !cpu3Fold {
+                                    turnNum += 2
+                                }
+                                else {
+                                    turnNum += 3
+                                }
+                            }
+
                         }
                         else if game!.cardInPlay.cardNum == 12 {
                             if !playerFold {
@@ -512,7 +534,29 @@ class PlayScreen: UIViewController {
                         game!.cpu2.cardsInHand.remove(at: num)
                         
                         if game!.cardInPlay.cardNum == 11 {
-                            turnNum += 1
+                            if game!.numOfPlayersValue == 3 {
+                                if !cpu3Fold {
+                                    turnNum += 1
+                                }
+                                else if !playerFold {
+                                    turnNum += 2
+                                }
+                                else {
+                                    turnNum += 3
+                                }
+                            }
+                            else if game!.numOfPlayersValue == 4 {
+                                if !cpu1Fold {
+                                    turnNum += 1
+                                }
+                                else if !cpu2Fold {
+                                    turnNum += 2
+                                }
+                                else {
+                                    turnNum += 3
+                                }
+                            }
+
                         }
                         else if game!.cardInPlay.cardNum == 12 {
                             if !cpu1Fold {
@@ -557,7 +601,19 @@ class PlayScreen: UIViewController {
                         game!.cardInPlay = game!.cpu3.cardsInHand[num]
                         game!.cpu3.cardsInHand.remove(at: num)
                         if game!.cardInPlay.cardNum == 11 {
-                            turnNum += 1
+                            if !playerFold {
+                                turnNum += 1
+                            }
+                            else if !cpu1Fold {
+                                turnNum += 2
+                            }
+                            else if !cpu2Fold{
+                                turnNum += 3
+                            }
+                            else {
+                                turnNum += 4
+                            }
+                            
                         }
                         else if game!.cardInPlay.cardNum == 12 {
                             if !cpu1Fold {
@@ -724,7 +780,28 @@ class PlayScreen: UIViewController {
     
     func specialCardsPlayer() {
         if game!.cardInPlay.cardNum == 11 {
-            turnNum += 1
+            if game!.numOfPlayersValue == 2 {
+                turnNum += 1
+            }
+            else if game!.numOfPlayersValue == 3 {
+                if !cpu1Fold {
+                    turnNum += 1
+                }
+                else {
+                    turnNum += 2
+                }
+            }
+            else if game!.numOfPlayersValue == 4 {
+                if !cpu1Fold {
+                    turnNum += 1
+                }
+                else if !cpu2Fold {
+                    turnNum += 2
+                }
+                else {
+                    turnNum += 3
+                }
+            }
         }
         else if game!.cardInPlay.cardNum == 12 {
             if !cpu1Fold {
